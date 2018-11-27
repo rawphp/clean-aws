@@ -1,7 +1,7 @@
 {
   "name": "clean-aws",
   "description": "CLI tool to clean AWS environments",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
