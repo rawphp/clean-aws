@@ -1,0 +1,65 @@
+{
+  "name": "clean-aws",
+  "description": "CLI tool to clean AWS environments",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "clean": "rm -Rf dist",
+    "preversion": "yarn lint && yarn build && yarn test && changelog-verify CHANGELOG.md",
+    "version": "yarn build && version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.363.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.9",
+    "aws-sdk-mock": "^4.2.0",
+    "changelog-verify": "^1.1.0",
+    "jest": "^23.6.0",
+    "nock": "^10.0.2",
+    "ts-jest": "^23.10.5",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.6",
+    "version-changelog": "^3.1.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "types.ts",
+      "typings.d.ts"
+    ],
+    "coverageReporters": [
+      "text",
+      "text-summary"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 85,
+        "lines": 85,
+        "functions": 80
+      }
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "testRegex": "(\\.(test|spec))\\.(ts|tsx|js)$",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "dist"
+    ],
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "verbose": false
+  }
+}
