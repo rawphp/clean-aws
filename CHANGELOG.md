@@ -2,6 +2,11 @@
 
 ## [Unreleased][]
 
+### Added
+
+- Git repository to `package.json`
+- Updated README description
+
 ## [0.0.2][] - 2018-11-28
 
 ### Changed
