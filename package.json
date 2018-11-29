@@ -9,18 +9,33 @@
     "url": "git@github.com:rawphp/clean-aws.git"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "./scripts/build",
     "test": "jest",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "clean": "rm -Rf dist",
     "preversion": "yarn lint && yarn build && yarn test && changelog-verify CHANGELOG.md",
     "version": "yarn build && version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
   },
+  "engines": {
+    "node": ">=6.10.0"
+  },
+  "bin": {
+    "clean-aws": "./dist/bin/awsCleaner.js"
+  },
   "dependencies": {
-    "aws-sdk": "^2.363.0"
+    "aws-sdk": "^2.363.0",
+    "bluebird": "^3.5.3",
+    "colors": "^1.3.2",
+    "commander": "^2.19.0",
+    "fs-extra": "^7.0.1",
+    "read-pkg-up": "^4.0.0",
+    "semver": "^5.6.0"
   },
   "devDependencies": {
+    "@types/bluebird": "^3.5.24",
+    "@types/fs-extra": "^5.0.4",
     "@types/jest": "^23.3.9",
+    "@types/node": "^10.12.10",
     "aws-sdk-mock": "^4.2.0",
     "changelog-verify": "^1.1.0",
     "jest": "^23.6.0",

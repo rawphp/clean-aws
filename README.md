@@ -28,6 +28,12 @@ This tool (or plans to) clean the following AWS resources:
 - SNS Topic Subscriptions
 - SQS Queues
 
+## Use as a Library
+
+This package can also be used as a library.
+
+`TODO: Provide example`
+
 ## License
 
 MIT
