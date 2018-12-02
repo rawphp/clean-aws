@@ -13,6 +13,8 @@
     "test": "jest",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "clean": "rm -Rf dist",
+    "setup": "yarn run build && cd ./dist && npm uninstall -g && npm install -g .",
+    "release": "npm publish .",
     "preversion": "yarn lint && yarn build && yarn test && changelog-verify CHANGELOG.md",
     "version": "yarn build && version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
   },
@@ -20,7 +22,7 @@
     "node": ">=6.10.0"
   },
   "bin": {
-    "clean-aws": "./dist/bin/awsCleaner.js"
+    "clean-aws": "./bin/clean-aws.js"
   },
   "dependencies": {
     "aws-sdk": "^2.363.0",
@@ -28,6 +30,7 @@
     "colors": "^1.3.2",
     "commander": "^2.19.0",
     "fs-extra": "^7.0.1",
+    "prompt-confirm": "^2.0.4",
     "read-pkg-up": "^4.0.0",
     "semver": "^5.6.0"
   },

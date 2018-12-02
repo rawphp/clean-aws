@@ -1,17 +1,13 @@
 import * as AWS from 'aws-sdk';
-import { ICleanOptions, IResourceCleaner } from '../types';
+import { ICleanOptions, IResourceCleaner, ISQSList } from '../types';
+import { BaseResource } from './BaseResource';
 
-export interface ISQSList {
-  region: string;
-  queues: string[];
-}
-
-export class SQS implements IResourceCleaner {
+export class SQS extends BaseResource implements IResourceCleaner {
   protected sqs: AWS.SQS;
-  protected region: string;
 
   public constructor(options: ICleanOptions) {
-    this.region = options.region;
+    super('SNS', options);
+
     this.sqs =
       options.sqs ||
       new AWS.SQS({
@@ -22,27 +18,34 @@ export class SQS implements IResourceCleaner {
   public async list(): Promise<object> {
     console.log('[SQS] Listing SQS Queues');
 
+    this.emit('listStarted', { resource: this, region: this.region });
+
     try {
       const queues = await this.sqs.listQueues().promise();
 
       if (!queues || !queues.QueueUrls) {
-        return { topics: [] };
+        return { region: this.region, queues: [] };
       }
 
       const file: ISQSList = {
         region: this.region,
+        profile: this.profile,
         queues: queues && queues.QueueUrls ? queues.QueueUrls.map((url: string) => url) : [],
       };
+
+      console.log('[SQS] Listing SQS Queues Completed');
 
       return file;
     } catch (error) {
       console.error(error);
 
       throw error;
+    } finally {
+      this.emit('listCompleted', { resource: this, region: this.region });
     }
   }
 
-  public async remove(queues: string[]): Promise<number> {
+  public async remove({ queues }: { queues: string[] }): Promise<number> {
     try {
       const processes = queues.map((queue: string) => {
         return this.sqs

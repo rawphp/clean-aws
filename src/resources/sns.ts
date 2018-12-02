@@ -1,18 +1,12 @@
 import * as AWS from 'aws-sdk';
-import { ICleanOptions, IResourceCleaner } from '../types';
+import { ICleanOptions, IResourceCleaner, ISNSList } from '../types';
+import { BaseResource } from './BaseResource';
 
-export interface ISNSList {
-  region: string;
-  topics: string[];
-  subscriptions: string[];
-}
-
-export class SNS implements IResourceCleaner {
+export class SNS extends BaseResource implements IResourceCleaner {
   protected sns: AWS.SNS;
-  protected region: string;
-
   public constructor(options: ICleanOptions) {
-    this.region = options.region;
+    super('SNS', options);
+
     this.sns =
       options.sns ||
       new AWS.SNS({
@@ -23,17 +17,16 @@ export class SNS implements IResourceCleaner {
   public async list(): Promise<object> {
     console.log('[SNS] Listing Topics & Subscriptions');
 
+    this.emit('listStarted', { resource: this, region: this.region });
+
     try {
       const topicResponse = await this.sns.listTopics().promise();
-
-      // if (!topicResponse || !topicResponse.Topics) {
-      //   return { topics: [] };
-      // }
 
       const subscriptionResponse = await this.sns.listSubscriptions().promise();
 
       const file: ISNSList = {
         region: this.region,
+        profile: this.profile,
         topics:
           topicResponse && topicResponse.Topics
             ? topicResponse.Topics.map((topic: AWS.SNS.Topic) => topic.TopicArn as string)
@@ -51,10 +44,12 @@ export class SNS implements IResourceCleaner {
       console.error(error);
 
       throw error;
+    } finally {
+      this.emit('listCompleted', { resource: this, region: this.region });
     }
   }
 
-  public async remove(topics: string[]): Promise<number> {
+  public async remove({ topics }: { topics: string[] }): Promise<number> {
     // try {
     //   const processes = subscriptions.map((subscription: string) => {
     //     return this.sns

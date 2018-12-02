@@ -1,74 +1,54 @@
 import * as BPromise from 'bluebird';
 import * as colors from 'colors/safe';
 import * as fs from 'fs-extra';
-import { CloudFormation } from './resources/cloud-formation';
-import { CloudWatch } from './resources/cloud-watch';
-import { DataPipeline } from './resources/data-pipeline';
-import { DynamoDb } from './resources/dynamo-db';
-import { EC2 } from './resources/ec2';
-import { IAM } from './resources/iam';
-import { S3 } from './resources/s3';
-import { SNS } from './resources/sns';
-import { SQS } from './resources/sqs';
-import { IResourceCleaner } from './types';
+import { loadResources } from './loadResources';
+import { ICleanOptions, IMasterResourceList, IResourceCleaner } from './types';
 
-export const list = async (options: any) => {
-  const resourceCleaners: IResourceCleaner[] = [];
+export const list = async (options: ICleanOptions) => {
+  const resourceCleaners: IResourceCleaner[] = loadResources(options);
 
-  if (Array.isArray(options.region)) {
-    console.log(colors.green(`Listig regions: ${options.region.join(', ')}`));
+  const resources: any = {};
 
-    const singleOpts = {
-      ...options,
-      region: options.region[0],
-    };
+  console.log('Registering Resource Cleaners');
 
-    resourceCleaners.push(new S3(singleOpts));
-    resourceCleaners.push(new IAM(singleOpts));
-
-    options.region.forEach((region: string) => {
-      const opts = {
-        ...options,
-        region,
-      };
-
-      resourceCleaners.push(new CloudWatch(opts));
-      resourceCleaners.push(new CloudFormation(opts));
-      resourceCleaners.push(new DataPipeline(opts));
-      resourceCleaners.push(new DynamoDb(opts));
-      resourceCleaners.push(new EC2(opts));
-      resourceCleaners.push(new SNS(opts));
-      resourceCleaners.push(new SQS(opts));
+  resourceCleaners.forEach((resource: IResourceCleaner) => {
+    resource.on('listStarted', (data) => {
+      resources[data.resource.toString()] = data;
     });
-  } else {
-    resourceCleaners.push(new S3(options));
-    resourceCleaners.push(new CloudFormation(options));
-    resourceCleaners.push(new CloudWatch(options));
-    resourceCleaners.push(new DataPipeline(options));
-    resourceCleaners.push(new DynamoDb(options));
-    resourceCleaners.push(new EC2(options));
-    resourceCleaners.push(new IAM(options));
-    resourceCleaners.push(new SNS(options));
-    resourceCleaners.push(new SQS(options));
-  }
+    resource.on('listCompleted', (data) => {
+      console.log(colors.green(`Completed ${data.resource.toString()}`));
 
-  const allFiles = {};
+      delete resources[data.resource.toString()];
+    });
+  });
+
+  const interval = setInterval(() => {
+    console.log('resources remaining: ', colors.italic(colors.grey(Object.keys(resources).toString())));
+  }, 3000);
+
+  const allFiles: IMasterResourceList = {};
 
   const resourceMaps = await BPromise.map(
     resourceCleaners,
-    (resource: IResourceCleaner) => {
+    async (resource: IResourceCleaner) => {
       try {
         return resource.list();
       } catch (error) {
-        console.error(error);
+        console.error(`[${resource.toString()}] error:`, error.message);
 
-        return {};
+        return Promise.resolve({
+          region: options.region,
+        });
       }
     },
-    { concurrency: 50 },
+    { concurrency: 30 },
   );
 
   resourceMaps.forEach((file: any) => {
+    if (!file || !file.region) {
+      return;
+    }
+
     if (!allFiles[file.region]) {
       allFiles[file.region] = {
         ...file,
@@ -81,11 +61,11 @@ export const list = async (options: any) => {
     }
   });
 
-  console.log(allFiles);
+  clearInterval(interval);
 
-  console.log(`Writing resources to ${options.outputFile}`);
+  console.log(`Writing resources to ${options.resourceFile}`);
 
-  await fs.writeJson(options.outputFile, allFiles, { spaces: 2 });
+  await fs.writeJson(`${options.resourceFile}`, allFiles, { spaces: 2 });
 
   return 0;
 };

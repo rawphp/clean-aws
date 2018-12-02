@@ -1,17 +1,13 @@
 import * as AWS from 'aws-sdk';
-import { ICleanOptions, IResourceCleaner } from '../types';
+import { ICleanOptions, IDynamoDbTableList, IResourceCleaner } from '../types';
+import { BaseResource } from './BaseResource';
 
-export interface IDynamoDbTableList {
-  region: string;
-  tables: string[];
-}
-
-export class DynamoDb implements IResourceCleaner {
+export class DynamoDb extends BaseResource implements IResourceCleaner {
   protected dynamoDb: AWS.DynamoDB;
-  protected region: string;
 
   public constructor(options: ICleanOptions) {
-    this.region = options.region;
+    super('DynamoDb', options);
+
     this.dynamoDb =
       options.dynamoDb ||
       new AWS.DynamoDB({
@@ -22,6 +18,8 @@ export class DynamoDb implements IResourceCleaner {
   public async list(): Promise<object> {
     console.log('[DynamoDb] Listing DynamoDb Tables');
 
+    this.emit('listStarted', { resource: this, region: this.region });
+
     try {
       const response = await this.dynamoDb.listTables().promise();
 
@@ -31,6 +29,7 @@ export class DynamoDb implements IResourceCleaner {
 
       const file: IDynamoDbTableList = {
         region: this.region,
+        profile: this.profile,
         tables:
           response && response.TableNames
             ? response.TableNames.map((table: AWS.DynamoDB.TableName) => table as string)
@@ -42,12 +41,14 @@ export class DynamoDb implements IResourceCleaner {
       console.error(error);
 
       throw error;
+    } finally {
+      this.emit('listCompleted', { resource: this, region: this.region });
     }
   }
 
-  public async remove(tableNames: string[]): Promise<number> {
+  public async remove({ tables }: { tables: string[] }): Promise<number> {
     try {
-      const processes = tableNames.map((name: string) => {
+      const processes = tables.map((name: string) => {
         return this.dynamoDb
           .deleteTable({
             TableName: name,

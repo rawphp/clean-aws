@@ -1,17 +1,13 @@
 import * as AWS from 'aws-sdk';
-import { ICleanOptions, IResourceCleaner } from '../types';
+import { IBucketsList, ICleanOptions, IResourceCleaner } from '../types';
+import { BaseResource } from './BaseResource';
 
-export interface IBucketsList {
-  region: string;
-  buckets: string[];
-}
-
-export class S3 implements IResourceCleaner {
+export class S3 extends BaseResource implements IResourceCleaner {
   protected s3: AWS.S3;
-  protected region: string;
 
   public constructor(options: ICleanOptions) {
-    this.region = options.region;
+    super('S3', options);
+
     this.s3 =
       options.s3 ||
       new AWS.S3({
@@ -22,6 +18,8 @@ export class S3 implements IResourceCleaner {
   public async list(): Promise<object> {
     console.log('[S3] Listing Buckets');
 
+    this.emit('listStarted', { resource: this, region: this.region });
+
     try {
       const response = await this.s3.listBuckets().promise();
 
@@ -31,6 +29,7 @@ export class S3 implements IResourceCleaner {
 
       const file: IBucketsList = {
         region: this.region,
+        profile: this.profile,
         buckets:
           response && response.Buckets ? response.Buckets.map((bucket: AWS.S3.Bucket) => bucket.Name as string) : [],
       };
@@ -40,11 +39,20 @@ export class S3 implements IResourceCleaner {
       console.error(error);
 
       throw error;
+    } finally {
+      this.emit('listCompleted', { resource: this, region: this.region });
     }
   }
 
-  public async remove(buckets: string[]): Promise<number> {
+  public async remove({ buckets }: { buckets: string[] }): Promise<number> {
     try {
+      if (this.dryRun) {
+        console.log('Dry Run');
+        console.log('Deleting', buckets);
+
+        return 0;
+      }
+
       const processes = buckets.map((bucket: string) => {
         return this.s3
           .deleteBucket({

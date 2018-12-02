@@ -1,22 +1,17 @@
 import * as AWS from 'aws-sdk';
-import { ICleanOptions, IResourceCleaner } from '../types';
+import * as BPromise from 'bluebird';
+import * as colors from 'colors/safe';
+import { ICleanOptions, IIAMList, IResourceCleaner } from '../types';
+import { BaseResource } from './BaseResource';
 
-export interface IIAMList {
-  region: string;
-  policies: string[];
-  roles: string[];
-  accessKeys: string[];
-  users: string[];
-}
-
-export class IAM implements IResourceCleaner {
+export class IAM extends BaseResource implements IResourceCleaner {
   protected iam: AWS.IAM;
-  protected region: string;
 
   public constructor(options: ICleanOptions) {
-    this.region = options.region;
+    super('IAM', options);
+
     this.iam =
-      options.ec2 ||
+      options.iam ||
       new AWS.IAM({
         region: options && options.region ? options.region : undefined,
       });
@@ -25,26 +20,40 @@ export class IAM implements IResourceCleaner {
   public async list(): Promise<object> {
     console.log('[IAM] Listing IAM');
 
+    this.emit('listStarted', { resource: this, region: this.region });
+
+    const policies = this.listPolicies();
+    const roles = this.listRoles();
+    const accessKeys = this.listAccessKeys();
+    const users = this.listUsers();
+
+    await BPromise.all([policies, roles, accessKeys, users]);
+
     try {
       const file: IIAMList = {
         region: this.region,
-        policies: await this.listPolicies(),
-        roles: await this.listRoles(),
-        accessKeys: await this.listAccessKeys(),
-        users: await this.listUsers(),
+        profile: this.profile,
+        policies: await policies,
+        roles: await roles,
+        accessKeys: await accessKeys,
+        users: await users,
       };
+
+      console.log('[IAM] Listing IAM Completed');
 
       return file;
     } catch (error) {
       console.error(error);
 
       throw error;
+    } finally {
+      this.emit('listCompleted', { resource: this, region: this.region });
     }
   }
 
-  public async remove(policyArns: string[]): Promise<number> {
+  public async remove({ policies }: { policies: string[] }): Promise<number> {
     try {
-      const processes = policyArns.map((policy: string) => {
+      const processes = policies.map((policy: string) => {
         return this.iam
           .deletePolicy({
             PolicyArn: policy,
@@ -76,9 +85,9 @@ export class IAM implements IResourceCleaner {
         ? response.Policies.map((policy: AWS.IAM.Policy) => policy.Arn as string)
         : [];
     } catch (error) {
-      console.error(error);
+      console.error(colors.yellow(error.message));
 
-      throw error;
+      return [];
     }
   }
 
@@ -94,9 +103,9 @@ export class IAM implements IResourceCleaner {
 
       return response && response.Roles ? response.Roles.map((role: AWS.IAM.Role) => role.Arn as string) : [];
     } catch (error) {
-      console.error(error);
+      console.error(colors.yellow(error.message));
 
-      throw error;
+      return [];
     }
   }
 
@@ -114,9 +123,9 @@ export class IAM implements IResourceCleaner {
         ? response.AccessKeyMetadata.map((key: AWS.IAM.AccessKeyMetadata) => key.AccessKeyId as string)
         : [];
     } catch (error) {
-      console.error(error);
+      console.error(colors.yellow(error.message));
 
-      throw error;
+      return [];
     }
   }
 
@@ -132,9 +141,9 @@ export class IAM implements IResourceCleaner {
 
       return response && response.Users ? response.Users.map((user: AWS.IAM.User) => user.UserId as string) : [];
     } catch (error) {
-      console.error(error);
+      console.error(colors.yellow(error.message));
 
-      throw error;
+      return [];
     }
   }
 }

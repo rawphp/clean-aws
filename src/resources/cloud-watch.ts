@@ -1,17 +1,13 @@
 import * as AWS from 'aws-sdk';
-import { ICleanOptions, IResourceCleaner } from '../types';
+import { ICleanOptions, ICloudWatchList, IResourceCleaner } from '../types';
+import { BaseResource } from './BaseResource';
 
-export interface ICloudWatchList {
-  region: string;
-  logGroups: string[];
-}
-
-export class CloudWatch implements IResourceCleaner {
+export class CloudWatch extends BaseResource implements IResourceCleaner {
   protected cloudWatch: AWS.CloudWatchLogs;
-  protected region: string;
 
   public constructor(options: ICleanOptions) {
-    this.region = options.region;
+    super('CloudWatch', options);
+
     this.cloudWatch =
       options.cloudWatch ||
       new AWS.CloudWatchLogs({
@@ -22,15 +18,18 @@ export class CloudWatch implements IResourceCleaner {
   public async list(): Promise<object> {
     console.log('[CloudWatch] Listing LogGroups');
 
+    this.emit('listStarted', { resource: this, region: this.region });
+
     try {
       const response = await this.cloudWatch.describeLogGroups().promise();
 
       if (!response || !response.logGroups) {
-        return { buckets: [] };
+        return { region: this.region, logGroups: [] };
       }
 
       const file: ICloudWatchList = {
         region: this.region,
+        profile: this.profile,
         logGroups:
           response && response.logGroups
             ? response.logGroups.map((group: AWS.CloudWatchLogs.LogGroup) => group.logGroupName as string)
@@ -42,12 +41,14 @@ export class CloudWatch implements IResourceCleaner {
       console.error(error);
 
       throw error;
+    } finally {
+      this.emit('listCompleted', { resource: this, region: this.region });
     }
   }
 
-  public async remove(logGroupNames: string[]): Promise<number> {
+  public async remove({ logGroups }: { logGroups: string[] }): Promise<number> {
     try {
-      const processes = logGroupNames.map((logGroup: string) => {
+      const processes = logGroups.map((logGroup: string) => {
         return this.cloudWatch
           .deleteLogGroup({
             logGroupName: logGroup,

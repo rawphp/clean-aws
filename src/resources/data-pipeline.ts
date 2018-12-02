@@ -1,31 +1,31 @@
 import * as AWS from 'aws-sdk';
-import { ICleanOptions, IResourceCleaner } from '../types';
-
-export interface IDataPipelineList {
-  region: string;
-  dataPipelines: string[];
-}
+import { ICleanOptions, IDataPipelineList, IResourceCleaner } from '../types';
+import { BaseResource } from './BaseResource';
 
 const availability = ['us-west-2', 'eu-west-1', 'ap-southeast-2', 'ap-northeast-1'];
 
-export class DataPipeline implements IResourceCleaner {
+export class DataPipeline extends BaseResource implements IResourceCleaner {
   protected dataPipeline: AWS.DataPipeline;
-  protected region: string;
 
   public constructor(options: ICleanOptions) {
-    this.region = options.region;
+    super('DataPipeline', options);
 
-    this.dataPipeline = new AWS.DataPipeline({
-      region: options && options.region ? options.region : '',
-    });
+    this.dataPipeline =
+      options.dataPipeline ||
+      new AWS.DataPipeline({
+        region: options && options.region ? options.region : '',
+      });
   }
 
   public async list(): Promise<object> {
     console.log('[DataPipeline] Listing Stacks', this.region);
 
+    this.emit('listStarted', { resource: this, region: this.region });
+
     try {
       const file: IDataPipelineList = {
         region: this.region,
+        profile: this.profile,
         dataPipelines: [],
       };
 
@@ -46,12 +46,14 @@ export class DataPipeline implements IResourceCleaner {
       console.error(error);
 
       throw error;
+    } finally {
+      this.emit('listCompleted', { resource: this, region: this.region });
     }
   }
 
-  public async remove(pipelines: string[]): Promise<number> {
+  public async remove({ dataPipelines }: { dataPipelines: string[] }): Promise<number> {
     try {
-      const processes = pipelines.map((pipelineId: string) => {
+      const processes = dataPipelines.map((pipelineId: string) => {
         return this.dataPipeline
           .deletePipeline({
             pipelineId,
