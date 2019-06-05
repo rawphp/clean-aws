@@ -2,6 +2,8 @@
 
 ## [Unreleased][]
 
+## [0.0.3][] - 2019-06-05
+
 ### Added
 
 - Git repository to `package.json`
@@ -19,6 +21,7 @@
 
 - Initial project scaffolding
 
-[Unreleased]: https://github.com/rawphp/clean-aws/compare/v0.0.2...HEAD
+[Unreleased]: https://github.com/rawphp/clean-aws/compare/v0.0.3...HEAD
+[0.0.3]: https://github.com/rawphp/clean-aws/compare/v0.0.2...v0.0.3
 [0.0.2]: https://github.com/rawphp/clean-aws/compare/v0.0.1...v0.0.2
 [0.0.1]: https://github.com/rawphp/clean-aws/tree/v0.0.1
