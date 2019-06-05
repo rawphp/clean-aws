@@ -19,7 +19,7 @@
     "version": "yarn build && version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
   },
   "engines": {
-    "node": ">=6.10.0"
+    "node": ">=8.10.0"
   },
   "bin": {
     "clean-aws": "./bin/clean-aws.js"
