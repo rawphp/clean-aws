@@ -12,5 +12,10 @@
       "single"
     ]
   },
+  "linterOptions": {
+    "exclude": [
+        "src/__tests__/fixtures/*"
+    ]
+  },
   "rulesDirectory": []
 }

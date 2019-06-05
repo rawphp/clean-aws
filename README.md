@@ -2,6 +2,12 @@
 
 This tool can be used to clean up AWS environments.
 
+## Install
+
+```bash
+npm install -g clean-aws
+```
+
 ## Usage
 
 If you want to delete all resources from your AWS account, you can just run `clean-aws clean`. This will delete all resources from all regions. You can also limit the tool to certain regions. Before deleting it will ask you to confirm that you indeed want to continue.

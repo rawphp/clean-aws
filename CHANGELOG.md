@@ -2,6 +2,14 @@
 
 ## [Unreleased][]
 
+### Changed
+
+- Updated README description
+
+### Fixed
+
+- Fixed package publishing
+
 ## [0.0.3][] - 2019-06-05
 
 ### Added
