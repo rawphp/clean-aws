@@ -2,6 +2,10 @@
 
 ## [Unreleased][]
 
+### Fixed
+
+- Fixed packaging
+
 ## [0.0.4][] - 2019-06-05
 
 ### Changed

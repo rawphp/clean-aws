@@ -22,7 +22,7 @@
     "node": ">=8.10.0"
   },
   "bin": {
-    "clean-aws": "./dist/bin/clean-aws.js"
+    "clean-aws": "./bin/clean-aws.js"
   },
   "dependencies": {
     "aws-sdk": "^2.363.0",

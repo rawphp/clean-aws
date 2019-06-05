@@ -2,16 +2,13 @@
 
 import * as colors from 'colors/safe';
 import * as program from 'commander';
-import * as readPackageUp from 'read-pkg-up';
 import * as semver from 'semver';
 
-const { pkg } = readPackageUp.sync();
-
-const version = pkg.version;
+const version = '8.10.0';
 const logger = console;
 
-if (semver.satisfies(version, pkg.engines.node)) {
-  logger.error(colors.red(`Clean AWS requires Node ${pkg.engines.node}`));
+if (semver.satisfies(process.version, version)) {
+  logger.error(colors.red(`Clean AWS requires Node ${version}`));
 
   process.exit(1);
 }
