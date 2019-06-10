@@ -1,0 +1,17 @@
+{
+  "IsTruncated": false,
+  "Contents": [
+    {
+      "Key": "image.png",
+      "LastModified": "2019-06-09T23:35:35.000Z",
+      "ETag": "\"240b63d653c9f67397786ab60815cee8\"",
+      "Size": 19008,
+      "StorageClass": "STANDARD"
+    }
+  ],
+  "Name": "test-bucket-08fa34b4-f3ef-4e0c-88e9-4dfd67ae0f14",
+  "Prefix": "",
+  "MaxKeys": 1000,
+  "CommonPrefixes": [],
+  "KeyCount": 1
+}

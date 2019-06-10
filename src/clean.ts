@@ -2,13 +2,17 @@ import * as BPromise from 'bluebird';
 import * as colors from 'colors/safe';
 import * as fs from 'fs-extra';
 import * as Confirm from 'prompt-confirm';
-import { loadResources } from './loadResources';
-import { ICleanOptions, IMasterResourceList, IRegionResources, IResourceCleaner } from './types';
+import { loadProviders } from './loadProviders';
+import { IMasterResourceList, IProviderOptions, IRegionResources, IResourceCleaner } from './types';
 
-export const clean = async (options: ICleanOptions) => {
-  let resources: IMasterResourceList;
+export const clean = async (options: IProviderOptions) => {
+  let resources: IMasterResourceList = {};
 
-  resources = await fs.readJson(options.resourceFile);
+  if (options.resourceFile && fs.existsSync(options.resourceFile)) {
+    resources = await fs.readJson(options.resourceFile);
+  } else {
+    resources = {};
+  }
 
   if (!options.dryRun) {
     const prompt = new Confirm({
@@ -20,10 +24,20 @@ export const clean = async (options: ICleanOptions) => {
       await BPromise.map(Object.keys(resources), async (region: string) => {
         const opts: IRegionResources = resources[region];
 
-        const resourceCleaners: IResourceCleaner[] = loadResources(opts);
+        opts.region = region;
+
+        const resourceCleaners: IResourceCleaner[] = loadProviders(opts);
 
         await BPromise.map(resourceCleaners, (resource: IResourceCleaner) => {
-          return resource.remove(opts);
+          resource.on('deletionStarted', (data) => {
+            console.log(`Deleting ${data.name} started`);
+          });
+
+          resource.on('deletionCompleted', (data) => {
+            console.log(`Deleting ${data.name} completed`);
+          });
+
+          return resource.remove();
         });
       });
     } else {

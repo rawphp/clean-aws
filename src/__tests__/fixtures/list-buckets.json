@@ -27,10 +27,10 @@
     "Name": "dpd-uk-abc-serverlessdeploymentbucket-tijgx0o9pe46",
     "CreationDate": "2018-10-17T03:35:50.000Z"
   }, {
-    "Name": "elasticbeanstalk-ap-southeast-2-156949620760",
+    "Name": "elasticbeanstalk-ap-southeast-2",
     "CreationDate": "2018-10-17T03:48:46.000Z"
   }, {
-    "Name": "elasticbeanstalk-eu-west-1-156949620760",
+    "Name": "elasticbeanstalk-eu-west-1",
     "CreationDate": "2017-04-28T04:48:02.000Z"
   }, {
     "Name": "elasticsearch-tdev-serverlessdeploymentbucket-1eqritkg6slib",
@@ -99,103 +99,103 @@
     "Name": "abc-magento-portal",
     "CreationDate": "2018-11-27T03:06:01.000Z"
   }, {
-    "Name": "temando-account-service-serverlessdeploymentbuck-1dknczv5nxq25",
+    "Name": "test-account-service-serverlessdeploymentbuck-1dknczv5nxq25",
     "CreationDate": "2018-10-16T09:44:58.000Z"
   }, {
-    "Name": "temando-account-service-serverlessdeploymentbuck-kmjk3akcwaoj",
+    "Name": "test-account-service-serverlessdeploymentbuck-kmjk3akcwaoj",
     "CreationDate": "2018-11-16T04:18:10.000Z"
   }, {
-    "Name": "temando-billing-service-serverlessdeploymentbuck-1i5oguho0rvt5",
+    "Name": "test-billing-service-serverlessdeploymentbuck-1i5oguho0rvt5",
     "CreationDate": "2018-10-16T09:24:44.000Z"
   }, {
-    "Name": "temando-cleaner-service-abc-ap-southeast-2-storage",
+    "Name": "test-cleaner-service-abc-ap-southeast-2-storage",
     "CreationDate": "2018-11-19T03:06:50.000Z"
   }, {
-    "Name": "temando-console-review-cypress-te-6qz0p7-data",
+    "Name": "test-console-review-cypress-te-6qz0p7-data",
     "CreationDate": "2018-11-12T00:44:15.000Z"
   }, {
-    "Name": "temando-console-review-cypress-te-6qz0p7-web",
+    "Name": "test-console-review-cypress-te-6qz0p7-web",
     "CreationDate": "2018-11-12T00:44:24.000Z"
   }, {
-    "Name": "temando-console-review-pipeline-f-ujoi1e-data",
+    "Name": "test-console-review-pipeline-f-ujoi1e-data",
     "CreationDate": "2018-11-15T06:57:44.000Z"
   }, {
-    "Name": "temando-console-review-pipeline-f-ujoi1e-web",
+    "Name": "test-console-review-pipeline-f-ujoi1e-web",
     "CreationDate": "2018-11-15T06:57:53.000Z"
   }, {
-    "Name": "temando-console-review-revised-cy-5n10mu-data",
+    "Name": "test-console-review-revised-cy-5n10mu-data",
     "CreationDate": "2018-11-14T21:35:39.000Z"
   }, {
-    "Name": "temando-console-review-revised-cy-5n10mu-web",
+    "Name": "test-console-review-revised-cy-5n10mu-web",
     "CreationDate": "2018-11-14T21:35:48.000Z"
   }, {
-    "Name": "temando-console-review-abc-cypres-5f9zil-data",
+    "Name": "test-console-review-abc-cypres-5f9zil-data",
     "CreationDate": "2018-11-14T11:09:06.000Z"
   }, {
-    "Name": "temando-console-review-abc-cypres-5f9zil-web",
+    "Name": "test-console-review-abc-cypres-5f9zil-web",
     "CreationDate": "2018-11-14T11:09:16.000Z"
   }, {
-    "Name": "temando-console-review-test-cypre-i6mcit-data",
+    "Name": "test-console-review-test-cypre-i6mcit-data",
     "CreationDate": "2018-11-06T04:22:50.000Z"
   }, {
-    "Name": "temando-console-review-test-cypre-i6mcit-web",
+    "Name": "test-console-review-test-cypre-i6mcit-web",
     "CreationDate": "2018-11-06T04:22:59.000Z"
   }, {
-    "Name": "temando-console-abc-data",
+    "Name": "test-console-abc-data",
     "CreationDate": "2018-11-06T04:22:47.000Z"
   }, {
-    "Name": "temando-console-abc-web",
+    "Name": "test-console-abc-web",
     "CreationDate": "2018-11-06T04:22:56.000Z"
   }, {
-    "Name": "temando-document-service-abc-ap-southeast-2-bucket",
+    "Name": "test-document-service-abc-ap-southeast-2-bucket",
     "CreationDate": "2018-10-17T01:54:20.000Z"
   }, {
-    "Name": "temando-documentation-storage-abc-ap-southeast-2",
+    "Name": "test-documentation-storage-abc-ap-southeast-2",
     "CreationDate": "2018-10-16T10:28:15.000Z"
   }, {
-    "Name": "temando-nginx-proxy-abc-cf",
+    "Name": "test-nginx-proxy-abc-cf",
     "CreationDate": "2018-10-16T11:46:29.000Z"
   }, {
-    "Name": "temando-service-registry-serverlessdeploymentbuck-1q80fhjl9cvil",
+    "Name": "test-service-registry-serverlessdeploymentbuck-1q80fhjl9cvil",
     "CreationDate": "2018-10-16T04:53:58.000Z"
   }, {
-    "Name": "temando-service-registry-serverlessdeploymentbuck-u8wqdykdgo4n",
+    "Name": "test-service-registry-serverlessdeploymentbuck-u8wqdykdgo4n",
     "CreationDate": "2018-10-24T01:27:33.000Z"
   }, {
-    "Name": "temando-service-registry-tdev-state",
+    "Name": "test-service-registry-tdev-state",
     "CreationDate": "2018-10-24T01:28:54.000Z"
   }, {
-    "Name": "temando-service-registry-abc-state",
+    "Name": "test-service-registry-abc-state",
     "CreationDate": "2018-10-16T04:55:18.000Z"
   }, {
-    "Name": "temando-session-service-serverlessdeploymentbuck-1ki7u1vw3o3y",
+    "Name": "test-session-service-serverlessdeploymentbuck-1ki7u1vw3o3y",
     "CreationDate": "2018-10-16T10:32:36.000Z"
   }, {
-    "Name": "temando-sls-deployments-tdev-ap-southeast-2",
+    "Name": "test-sls-deployments-tdev-ap-southeast-2",
     "CreationDate": "2018-10-24T01:42:25.000Z"
   }, {
-    "Name": "temando-sls-deployments-tdev-eu-west-1",
+    "Name": "test-sls-deployments-tdev-eu-west-1",
     "CreationDate": "2018-10-24T01:38:02.000Z"
   }, {
-    "Name": "temando-sls-deployments-tdev-us-east-2",
+    "Name": "test-sls-deployments-tdev-us-east-2",
     "CreationDate": "2018-10-24T01:34:23.000Z"
   }, {
-    "Name": "temando-sls-deployments-abc-ap-southeast-2",
+    "Name": "test-sls-deployments-abc-ap-southeast-2",
     "CreationDate": "2018-10-16T05:09:33.000Z"
   }, {
-    "Name": "temando-sls-deployments-abc-eu-west-1",
+    "Name": "test-sls-deployments-abc-eu-west-1",
     "CreationDate": "2018-10-17T04:05:56.000Z"
   }, {
-    "Name": "temando-stream-service-t-serverlessdeploymentbuck-1jwbedisqj69t",
+    "Name": "test-stream-service-t-serverlessdeploymentbuck-1jwbedisqj69t",
     "CreationDate": "2018-10-16T09:50:09.000Z"
   }, {
-    "Name": "temando-swagger-registry-serverlessdeploymentbuck-zyt5s16dor73",
+    "Name": "test-swagger-registry-serverlessdeploymentbuck-zyt5s16dor73",
     "CreationDate": "2018-10-16T05:12:47.000Z"
   }, {
-    "Name": "temando-swagger-registry-abc-storage",
+    "Name": "test-swagger-registry-abc-storage",
     "CreationDate": "2018-10-16T05:13:56.000Z"
   }, {
-    "Name": "temando-tracking-service-abc-store",
+    "Name": "test-tracking-service-abc-store",
     "CreationDate": "2018-10-16T11:41:25.000Z"
   }, {
     "Name": "ups-v3-abc-serverlessdeploymentbucket-f7h6ngs32no",

@@ -1,17 +1,24 @@
 import { EventEmitter } from 'events';
+import * as AWS from 'aws-sdk';
 
 export interface IResourceCleaner extends EventEmitter {
-  list: () => Promise<object>;
-  remove: (list: IRegionResources) => Promise<number>;
+  getData: () => any;
+  list: () => Promise<boolean>;
+  remove: () => Promise<boolean>;
   toString: () => string;
 }
 
-export interface ICleanOptions {
+export interface IProviderOptions {
   profile: string;
   region: string;
   resourceFile: string;
   dryRun: boolean;
   [key: string]: any;
+}
+
+export interface IS3Options extends IProviderOptions {
+  buckets?: string[];
+  s3?: AWS.S3;
 }
 
 // document types
@@ -48,7 +55,7 @@ export interface IMasterResourceList {
 export type IRegionResources =
   & ISQSList
   & ISNSList
-  & IBucketsList
+  // & IBucketsList
   & IIAMList
   & IEC2List
   & IDynamoDbTableList
@@ -69,11 +76,11 @@ export interface ISNSList {
   subscriptions: string[];
 }
 
-export interface IBucketsList {
-  region: string;
-  profile: string;
-  buckets: string[];
-}
+// export interface IBucketsList {
+//   region: string;
+//   profile: string;
+//   buckets: string[];
+// }
 
 export interface IIAMList {
   region: string;
@@ -111,5 +118,5 @@ export interface ICloudWatchList {
 export interface ICloudFormationList {
   region: string;
   profile: string;
-  cloudFormationStacks: string[];
+  stacks: string[];
 }

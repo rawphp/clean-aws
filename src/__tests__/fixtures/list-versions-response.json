@@ -1,0 +1,32 @@
+{
+  "IsTruncated": false,
+  "KeyMarker": "",
+  "VersionIdMarker": "",
+  "Versions": [
+    {
+      "ETag": "\"240b63d653c9f67397786ab60815cee8\"",
+      "Size": 19008,
+      "StorageClass": "STANDARD",
+      "Key": "image.png",
+      "VersionId": "PEYnM6liAvEg7vgNWG0At1kGa3iKO9a0",
+      "IsLatest": false,
+      "LastModified": "2019-06-09T23:35:35.000Z"
+    },
+    {
+      "ETag": "\"240b63d653c9f67397786ab60815cee8\"",
+      "Size": 19008,
+      "StorageClass": "STANDARD",
+      "Key": "image.png",
+      "VersionId": "y77TFoTzYomXPcpaLzla9i6VqIv9IhOO",
+      "IsLatest": false,
+      "LastModified": "2019-06-09T23:35:21.000Z"
+    }
+  ],
+  "DeleteMarkers": [
+    { "Key": "image.png", "VersionId": "r2XYKmhTTbMQdtWtprQdra0WAkk6wlYS", "IsLatest": true, "LastModified": "2019-06-09T23:41:35.000Z" }
+  ],
+  "Name": "test-bucket-08fa34b4-f3ef-4e0c-88e9-4dfd67ae0f14",
+  "Prefix": "",
+  "MaxKeys": 1000,
+  "CommonPrefixes": []
+}
