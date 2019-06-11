@@ -39,7 +39,6 @@
     "@types/fs-extra": "^7.0.0",
     "@types/jest": "^23.3.9",
     "@types/node": "^10.12.10",
-    "aws-sdk-mock": "^4.4.0",
     "changelog-verify": "^1.1.2",
     "jest": "^23.6.0",
     "nock": "^10.0.6",

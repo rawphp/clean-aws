@@ -104,7 +104,7 @@ export class CloudFormation extends Provider implements IResourceCleaner {
         } catch (error) {
           console.error(colors.red(error.message));
         }
-      }, { concurrency: 2 });
+      }, { concurrency: 4 });
 
       this.emit('deleteCompleted', { resource: this, region: this.region, data: { stacks: this.stacks } });
 
