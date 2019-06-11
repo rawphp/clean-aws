@@ -12,11 +12,6 @@ script:
   - yarn run lint
   - yarn run test
   - yarn run coverage
-  - yarn run markdownlint:lint
-
-# after_success:
-#   - yarn coveralls
-#   - yarn codeclimate
 
 notifications:
   email:
