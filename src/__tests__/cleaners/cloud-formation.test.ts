@@ -17,6 +17,7 @@ describe('CloudFormation', () => {
 
   beforeEach(() => {
     nock.disableNetConnect();
+    // nock('https://cloudformation.ap-southeast-2.amazonaws.com').post('/').reply(200, {});
 
     cf = new AWS.CloudFormation({ region: options.region });
 
@@ -41,7 +42,7 @@ describe('CloudFormation', () => {
   });
 
   describe('list', () => {
-    it.only('lists stacks successfully', async () => {
+    it('lists stacks successfully', async () => {
       await resource.list();
 
       expect(resource.getData()).toMatchSnapshot();

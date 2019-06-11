@@ -1,3 +1,4 @@
+import * as nock from 'nock';
 import { loadProviders } from '../loadProviders';
 
 describe('loadProviders', () => {
@@ -5,6 +6,15 @@ describe('loadProviders', () => {
     profile: 'test',
     region: 'ap-southeast-2',
   };
+
+  beforeEach(() => {
+    nock.disableNetConnect();
+    delete process.env.AWS_PROFILE;
+  });
+
+  afterEach(() => {
+    nock.enableNetConnect();
+  });
 
   it('loads cleaners successfully', () => {
     const response = loadProviders(defaultOptions);

@@ -19,6 +19,7 @@ describe('S3', () => {
 
   beforeEach(() => {
     nock.disableNetConnect();
+    delete process.env.AWS_PROFILE;
 
     s3 = new AWS.S3({ region: options.region });
 
