@@ -1,4 +1,5 @@
 import * as AWS from 'aws-sdk';
+import * as nock from 'nock';
 import { CloudFormation } from '../../cleaners/cloud-formation';
 import { IProviderOptions, IResourceCleaner } from '../../types';
 import * as describeStacksResponse from '../fixtures/describe-stacks-response.json';
@@ -15,6 +16,8 @@ describe('CloudFormation', () => {
   };
 
   beforeEach(() => {
+    nock.disableNetConnect();
+
     cf = new AWS.CloudFormation({ region: options.region });
 
     options.cloudFormation = cf;
@@ -27,6 +30,7 @@ describe('CloudFormation', () => {
   });
 
   afterEach(() => {
+    nock.enableNetConnect();
     jest.restoreAllMocks();
   });
 
@@ -37,7 +41,7 @@ describe('CloudFormation', () => {
   });
 
   describe('list', () => {
-    it('lists stacks successfully', async () => {
+    it.only('lists stacks successfully', async () => {
       await resource.list();
 
       expect(resource.getData()).toMatchSnapshot();

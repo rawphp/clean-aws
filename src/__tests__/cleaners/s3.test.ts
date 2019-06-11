@@ -1,4 +1,5 @@
 import * as AWS from 'aws-sdk';
+import * as nock from 'nock';
 import { S3 } from '../../cleaners/s3';
 import { IResourceCleaner, IS3Options } from '../../types';
 import * as listBucketsJson from '../fixtures/list-buckets.json';
@@ -17,6 +18,8 @@ describe('S3', () => {
   };
 
   beforeEach(() => {
+    nock.disableNetConnect();
+
     s3 = new AWS.S3({ region: options.region });
 
     options.s3 = s3;
@@ -29,6 +32,7 @@ describe('S3', () => {
   });
 
   afterEach(() => {
+    nock.enableNetConnect();
     jest.restoreAllMocks();
   });
 
