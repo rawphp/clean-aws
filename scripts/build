@@ -15,5 +15,5 @@ rsync -am  ./src/* ./dist --exclude '*.ts'
 # Build typescript
 yarn tsc
 
-rm -rf ./dist/__tests__
-rm ./dist/*-resources.json
+# rm -rf ./dist/__tests__
+# rm ./dist/*-resources.json
