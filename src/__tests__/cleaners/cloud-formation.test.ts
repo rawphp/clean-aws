@@ -103,6 +103,7 @@ describe('CloudFormation', () => {
             ResponseMetadata: { RequestId: '4b559c28-8bd4-11e9-85bd-c122c3e7f8c1' },
             Stacks: [
               {
+                // tslint:disable-next-line:max-line-length
                 StackId: 'arn:aws:cloudformation:ap-southeast-2:159931620759:stack/ups-v3-tdk/a165c3f0-f2df-11e8-aa1d-0ab1e239639c',
                 StackName: 'ups-v3-tdk',
                 Description: 'The AWS CloudFormation template for this Serverless application',
@@ -146,6 +147,7 @@ describe('CloudFormation', () => {
                     OutputValue: 'arn:aws:lambda:ap-southeast-2:159931620759:function:ups-v3-tdk-quote:15',
                     Description: 'Current Lambda function version',
                   },
+                  // tslint:disable-next-line:max-line-length
                   { OutputKey: 'ServerlessDeploymentBucketName', OutputValue: 'ups-v3-tdk-serverlessdeploymentbucket-f7h6ngs32no' },
                   {
                     OutputKey: 'MetaLambdaFunctionQualifiedArn',

@@ -1,0 +1,23 @@
+language: node_js
+
+node_js:
+  - "8"
+  - "10"
+  - "11"
+
+sudo: false
+
+script:
+  - yarn run build
+  - yarn run lint
+  - yarn run test
+  - yarn run coverage
+  - yarn run markdownlint:lint
+
+# after_success:
+#   - yarn coveralls
+#   - yarn codeclimate
+
+notifications:
+  email:
+    tom.kaczocha.code@gmail.com

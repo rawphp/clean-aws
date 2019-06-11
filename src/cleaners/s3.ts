@@ -33,7 +33,9 @@ export class S3 extends Provider implements IResourceCleaner {
         return false;
       }
 
-      this.buckets = response && response.Buckets ? response.Buckets.map((bucket: AWS.S3.Bucket) => bucket.Name as string) : [];
+      this.buckets = response && response.Buckets
+        ? response.Buckets.map((bucket: AWS.S3.Bucket) => bucket.Name as string)
+        : [];
 
       this.emit('listCompleted', { resource: this, region: this.region, data: { buckets: this.buckets } });
 

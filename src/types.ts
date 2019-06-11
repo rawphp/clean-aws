@@ -1,5 +1,5 @@
-import { EventEmitter } from 'events';
 import * as AWS from 'aws-sdk';
+import { EventEmitter } from 'events';
 
 export interface IResourceCleaner extends EventEmitter {
   getData: () => any;
