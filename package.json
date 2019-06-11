@@ -11,6 +11,7 @@
   "scripts": {
     "build": "./scripts/build",
     "test": "jest",
+    "coverage": "jest --coverage",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "clean": "rm -Rf dist",
     "setup": "yarn run build && cd ./dist && npm uninstall -g && npm install -g .",
@@ -25,48 +26,51 @@
     "clean-aws": "./bin/clean-aws.js"
   },
   "dependencies": {
-    "aws-sdk": "^2.363.0",
-    "bluebird": "^3.5.3",
-    "colors": "^1.3.2",
-    "commander": "^2.19.0",
+    "aws-sdk": "^2.468.0",
+    "bluebird": "^3.5.5",
+    "colors": "^1.3.3",
+    "commander": "^2.20.0",
     "fs-extra": "^7.0.1",
     "prompt-confirm": "^2.0.4",
-    "read-pkg-up": "^4.0.0",
-    "semver": "^5.6.0"
+    "semver": "^6.1.1"
   },
   "devDependencies": {
-    "@types/bluebird": "^3.5.24",
-    "@types/fs-extra": "^5.0.4",
+    "@types/bluebird": "^3.5.27",
+    "@types/fs-extra": "^7.0.0",
     "@types/jest": "^23.3.9",
     "@types/node": "^10.12.10",
-    "aws-sdk-mock": "^4.2.0",
-    "changelog-verify": "^1.1.0",
+    "changelog-verify": "^1.1.2",
     "jest": "^23.6.0",
-    "nock": "^10.0.2",
+    "nock": "^10.0.6",
     "ts-jest": "^23.10.5",
-    "ts-node": "^7.0.1",
-    "tslint": "^5.11.0",
-    "typescript": "^3.1.6",
-    "version-changelog": "^3.1.0"
+    "ts-node": "^8.2.0",
+    "tslint": "^5.17.0",
+    "typescript": "^3.5.1",
+    "version-changelog": "^3.1.1"
   },
   "jest": {
+    "preset": "ts-jest",
+    "testMatch": null,
+    "verbose": true,
     "collectCoverageFrom": [
       "src/**/*"
     ],
     "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      "types.ts",
-      "typings.d.ts"
+      "<rootDir>/node_modules/",
+      "<rootDir>/src/bin",
+      "<rootDir>/src/__tests__"
     ],
     "coverageReporters": [
+      "html",
       "text",
-      "text-summary"
+      "text-summary",
+      "lcov"
     ],
     "coverageThreshold": {
       "global": {
-        "statements": 85,
-        "lines": 85,
-        "functions": 80
+        "statements": 60,
+        "lines": 65,
+        "functions": 55
       }
     },
     "moduleFileExtensions": [
@@ -76,12 +80,12 @@
     ],
     "testRegex": "(\\.(test|spec))\\.(ts|tsx|js)$",
     "testPathIgnorePatterns": [
-      "/node_modules/",
-      "dist"
+      "<rootDir>/node_modules/",
+      "<rootDir>/dist/*",
+      "<rootDir>/src/bin/*.ts"
     ],
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-    },
-    "verbose": false
+    }
   }
 }

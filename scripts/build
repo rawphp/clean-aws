@@ -16,4 +16,4 @@ rsync -am  ./src/* ./dist --exclude '*.ts'
 yarn tsc
 
 rm -rf ./dist/__tests__
-rm ./dist/*-resources.json
+rm -f ./dist/*-resources.json

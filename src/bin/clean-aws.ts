@@ -4,17 +4,16 @@ import * as colors from 'colors/safe';
 import * as program from 'commander';
 import * as semver from 'semver';
 
-const version = '8.10.0';
+const requiredVersion = '>=8.10';
 const logger = console;
 
-if (semver.satisfies(process.version, version)) {
-  logger.error(colors.red(`Clean AWS requires Node ${version}`));
+if (!semver.satisfies(process.version, requiredVersion)) {
+  logger.error(colors.red(`Clean AWS requires Node ${requiredVersion}`));
 
   process.exit(1);
 }
 
 program
-  .version(version)
   .command('list', 'list resources in an environment')
-  .command('clean', 'initialise a new tracking solution')
+  .command('clean', 'clean aws environment')
   .parse(process.argv);

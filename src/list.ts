@@ -1,71 +1,64 @@
 import * as BPromise from 'bluebird';
 import * as colors from 'colors/safe';
 import * as fs from 'fs-extra';
-import { loadResources } from './loadResources';
-import { ICleanOptions, IMasterResourceList, IResourceCleaner } from './types';
+import { loadProviders } from './loadProviders';
+import { IMasterResourceList, IProviderOptions, IResourceCleaner } from './types';
 
-export const list = async (options: ICleanOptions) => {
-  const resourceCleaners: IResourceCleaner[] = loadResources(options);
+export const list = async (options: IProviderOptions): Promise<any> => {
+  const cleaners: IResourceCleaner[] = loadProviders(options);
 
   const resources: any = {};
+  const resourceList: IMasterResourceList = {};
 
-  console.log('Registering Resource Cleaners');
+  console.log('Registering Providers');
 
-  resourceCleaners.forEach((resource: IResourceCleaner) => {
+  cleaners.forEach((resource: IResourceCleaner) => {
     resource.on('listStarted', (data) => {
       resources[data.resource.toString()] = data;
     });
-    resource.on('listCompleted', (data) => {
-      console.log(colors.green(`Completed ${data.resource.toString()}`));
+    resource.on('listCompleted', (event) => {
+      console.log(colors.green(`Completed ${event.resource.toString()}`));
 
-      delete resources[data.resource.toString()];
+      if (!event || !event.region) {
+        return;
+      }
+
+      if (!resourceList[event.region]) {
+        resourceList[event.region] = {
+          ...event.data,
+        };
+      } else {
+        resourceList[event.region] = {
+          ...resourceList[event.region],
+          ...event.data,
+        };
+      }
+
+      delete resources[event.resource.toString()];
     });
   });
 
   const interval = setInterval(() => {
-    console.log('resources remaining: ', colors.italic(colors.grey(Object.keys(resources).toString())));
+    console.log('Resources remaining: ', colors.italic(colors.grey(Object.keys(resources).toString())));
   }, 3000);
 
-  const allFiles: IMasterResourceList = {};
+  await BPromise.map(cleaners, async (resource: IResourceCleaner) => {
+    try {
+      return resource.list();
+    } catch (error) {
+      console.error(`[${resource.toString()}] error:`, error.message);
 
-  const resourceMaps = await BPromise.map(
-    resourceCleaners,
-    async (resource: IResourceCleaner) => {
-      try {
-        return resource.list();
-      } catch (error) {
-        console.error(`[${resource.toString()}] error:`, error.message);
-
-        return Promise.resolve({
-          region: options.region,
-        });
-      }
-    },
-    { concurrency: 30 },
-  );
-
-  resourceMaps.forEach((file: any) => {
-    if (!file || !file.region) {
-      return;
+      return Promise.resolve({
+        region: options.region,
+      });
     }
-
-    if (!allFiles[file.region]) {
-      allFiles[file.region] = {
-        ...file,
-      };
-    } else {
-      allFiles[file.region] = {
-        ...allFiles[file.region],
-        ...file,
-      };
-    }
-  });
+  }, { concurrency: 20 });
 
   clearInterval(interval);
 
   console.log(`Writing resources to ${options.resourceFile}`);
 
-  await fs.writeJson(`${options.resourceFile}`, allFiles, { spaces: 2 });
+  await fs.writeJson(`${options.resourceFile}`, resourceList, { spaces: 2 });
 
-  return 0;
+  return resourceList;
 };

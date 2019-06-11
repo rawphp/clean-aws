@@ -1,0 +1,2152 @@
+{
+  "ResponseMetadata": { "RequestId": "a45aae01-8bd2-11e9-9cb9-25b4e467ee95" },
+  "Stacks": [
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/test-document-service-v2-abc/e9ec2360-3ef4-11e9-9a23-0af0093ead5a",
+      "StackName": "test-document-service-v2-abc",
+      "Description": "AWS CloudFormation for deploying Apparatus",
+      "Parameters": [],
+      "CreationTime": "2019-03-05T03:15:22.911Z",
+      "LastUpdatedTime": "2019-03-05T03:17:58.141Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        { "OutputKey": "ApparatusInstanceProfile", "OutputValue": "test-document-service-v2-abc-ApparatusInstanceProfile-1EWS203B0FI31" },
+        {
+          "OutputKey": "ApparatusBeanstalkEndpoint",
+          "OutputValue": "http://test-document-service-v2-abc.ap-southeast-2.elasticbeanstalk.com",
+          "Description": "ApparatusBeanstalkEndpoint",
+          "ExportName": "apparatusv2-beanstalk-endpoint-ap-southeast-2-abc"
+        },
+        { "OutputKey": "DeploymentBucketName", "OutputValue": "test-document-service-v2-abc-ap-southeast-2-bucket" },
+        { "OutputKey": "ApparatusEC2Role", "OutputValue": "test-document-service-v2-abc-ApparatusEC2Role-16SHSVBN4QIN8" }
+      ],
+      "Tags": [],
+      "DriftInformation": { "StackDriftStatus": "DRIFTED", "LastCheckTimestamp": "2019-06-10T06:10:16.809Z" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/test-scheduled-reports-abc/24dd5970-25e7-11e9-81d6-0638f534d61e",
+      "StackName": "test-scheduled-reports-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2019-02-01T06:03:49.833Z",
+      "LastUpdatedTime": "2019-05-13T02:50:23.140Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "ScheduleShipmentReportsLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-scheduled-reports-abc-scheduleShipmentReports:17",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CreateInvoiceReportLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-scheduled-reports-abc-createInvoiceReport:11",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CreateShipmentReportLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-scheduled-reports-abc-createShipmentReport:17",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CreateShipmentTrendsReportLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-scheduled-reports-abc-createShipmentTrendsReport:11",
+          "Description": "Current Lambda function version"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "test-sls-deployments-abc-ap-southeast-2" }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "DRIFTED", "LastCheckTimestamp": "2019-06-10T06:14:42.249Z" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/carrier-integration-stub-abc/e6d8eb70-0355-11e9-9669-028d024c9854",
+      "StackName": "carrier-integration-stub-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-12-19T06:18:29.249Z",
+      "LastUpdatedTime": "2019-03-05T03:14:28.374Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "RegistrationLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:carrier-integration-stub-abc-registration:13",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "TrackingLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:carrier-integration-stub-abc-tracking:13",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "BookingLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:carrier-integration-stub-abc-booking:13",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CompletionDocumentationLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:carrier-integration-stub-abc-completionDocumentation:13",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "QuoteLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:carrier-integration-stub-abc-quote:13",
+          "Description": "Current Lambda function version"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "test-sls-deployments-abc-ap-southeast-2" },
+        {
+          "OutputKey": "MetaLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:carrier-integration-stub-abc-meta:13",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "DocumentationLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:carrier-integration-stub-abc-documentation:13",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "IamRoleArnLambda",
+          "OutputValue": "arn:aws:iam::159931620759:role/carrier-integration-stub-abc-IamRoleLambda-1ET4ZGO8MCCIA",
+          "Description": "ARN of the lambda IAM role"
+        },
+        {
+          "OutputKey": "RenewLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:carrier-integration-stub-abc-renew:13",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CompletionLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:carrier-integration-stub-abc-completion:13",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CollectionPointLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:carrier-integration-stub-abc-collectionPoint:13",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://a2oqp3da21.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/ups-v3-abc/a165c3f0-f2df-11e8-aa1d-0ab1e239639c",
+      "StackName": "ups-v3-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-11-28T07:31:33.431Z",
+      "LastUpdatedTime": "2019-03-05T03:30:01.815Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "MarcoLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:ups-v3-abc-marco:15",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "TrackingLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:ups-v3-abc-tracking:15",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "BookingLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:ups-v3-abc-booking:15",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "RegisterLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:ups-v3-abc-register:15",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "PaperlessLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:ups-v3-abc-paperless:15",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "QuoteLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:ups-v3-abc-quote:15",
+          "Description": "Current Lambda function version"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "ups-v3-abc-serverlessdeploymentbucket-f7h6ngs32no" },
+        {
+          "OutputKey": "MetaLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:ups-v3-abc-meta:15",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "IamRoleArnLambda",
+          "OutputValue": "arn:aws:iam::159931620759:role/ups-v3-abc-IamRoleLambda-17FY68BTVCPHY",
+          "Description": "ARN of the lambda IAM role"
+        },
+        {
+          "OutputKey": "LicenseLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:ups-v3-abc-license:15",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "EulaLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:ups-v3-abc-eula:15",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CompletionLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:ups-v3-abc-completion:15",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CollectionPointLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:ups-v3-abc-collectionPoint:15",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://yxsgif1eeh.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/collection-point-abc/b6ade400-f1ee-11e8-8e09-0260129bfd7c",
+      "StackName": "collection-point-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-11-27T02:47:00.478Z",
+      "LastUpdatedTime": "2018-12-14T06:40:11.762Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "AppLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:collection-point-abc-app:4",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://mbojvmd9y1.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "test-sls-deployments-abc-ap-southeast-2" }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/test-nginx-proxy-abc/2f3bdf70-ed36-11e8-b829-50fae94fac82",
+      "StackName": "test-nginx-proxy-abc",
+      "Description": "The AWS CloudFormation template for buildinng a test Public API",
+      "Parameters": [
+        { "ParameterKey": "KeyName", "ParameterValue": "NginxProxy" },
+        { "ParameterKey": "AccessKeyId", "ParameterValue": "AKIAJHJ7XC4P5XVQXIUQ" },
+        { "ParameterKey": "SecretAccessKey", "ParameterValue": "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" },
+        { "ParameterKey": "ImageId", "ParameterValue": "ami-041bff7cccfc38a28" },
+        { "ParameterKey": "InstanceType", "ParameterValue": "t2.micro" }
+      ],
+      "CreationTime": "2018-11-21T02:36:01.200Z",
+      "LastUpdatedTime": "2018-12-19T04:38:58.789Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": [],
+      "Outputs": [
+        {
+          "OutputKey": "Apac1ApiabctestIoDNS",
+          "OutputValue": "https://test-n-Apac1Api-1TCM130HZO8DU-878884738.ap-southeast-2.elb.amazonaws.com",
+          "Description": "Public DNS Name of apac-1.api.abc.test.io ELB"
+        },
+        {
+          "OutputKey": "Apac1ApiabctestIoZone",
+          "OutputValue": "Z1GM3OXH4ZPM65",
+          "Description": "Hosted Zone ID of apac-1.api.abc.test.io ELB"
+        },
+        { "OutputKey": "ApiabctestIoZone", "OutputValue": "Z1GM3OXH4ZPM65", "Description": "Hosted Zone ID of api.abc.test.io ELB" },
+        {
+          "OutputKey": "ApiabctestIoDNS",
+          "OutputValue": "https://test-n-ApiabcTe-1O8HOEN35AZO7-527057018.ap-southeast-2.elb.amazonaws.com",
+          "Description": "Public DNS Name of api.abc.test.io ELB"
+        }
+      ],
+      "Tags": [],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/test-completion-service-abc/b4817c80-ebab-11e8-8a2d-02803617c936",
+      "StackName": "test-completion-service-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-11-19T03:32:13.660Z",
+      "LastUpdatedTime": "2019-03-05T03:02:30.876Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "PrepareLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-completion-service-abc-prepare:37",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "MarcoLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-completion-service-abc-marco:37",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CreateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-completion-service-abc-create:37",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ProcessLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-completion-service-abc-process:37",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "IndexingLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-completion-service-abc-indexing:37",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ListLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-completion-service-abc-list:37",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://g0rj0a3imb.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "test-sls-deployments-abc-ap-southeast-2" },
+        {
+          "OutputKey": "ReadLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-completion-service-abc-read:37",
+          "Description": "Current Lambda function version"
+        }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/test-experience-service-abc/2de49450-ebab-11e8-b829-50fae94fac82",
+      "StackName": "test-experience-service-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-11-19T03:28:27.740Z",
+      "LastUpdatedTime": "2019-03-04T01:14:25.836Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "CreateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-experience-service-abc-create:25",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "UpdateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-experience-service-abc-update:25",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CreateDefaultLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-experience-service-abc-createDefault:1",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "QualifyLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-experience-service-abc-qualify:6",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "IndexingLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-experience-service-abc-indexing:25",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ListLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-experience-service-abc-list:25",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "DestroyLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-experience-service-abc-destroy:25",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://zzxhe2s3l0.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "test-sls-deployments-abc-ap-southeast-2" },
+        {
+          "OutputKey": "ReadLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-experience-service-abc-read:25",
+          "Description": "Current Lambda function version"
+        }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/test-carrier-service-abc/2434e700-eba8-11e8-9792-028a77aa9a56",
+      "StackName": "test-carrier-service-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-11-19T03:06:43.111Z",
+      "LastUpdatedTime": "2019-05-31T04:50:14.869Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "RegistrationDashmarcoLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-registration-marco:32",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CfgDashrenewLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-cfg-renew:32",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CrrDashdeleteLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-crr-delete:32",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "AvlDashcreateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-avl-create:32",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CfgDashcreateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-cfg-create:32",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "StorageS3Bucket",
+          "OutputValue": "test-carrier-service-abc-ap-southeast-2-storage",
+          "Description": "Name of the s3 bucket used for storage"
+        },
+        {
+          "OutputKey": "RegistrationDashmarcoDashdynamicLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-registration-marco-dynamic:32",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CrrDashlistDashsupportedDashcountriesLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-crr-list-supported-countries:32",
+          "Description": "Current Lambda function version"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "test-sls-deployments-abc-ap-southeast-2" },
+        {
+          "OutputKey": "CfgDashlistLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-cfg-list:32",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CreateDashnicDashconfLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-create-nic-conf:25",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CrrDashonlineDashregistrationLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-crr-online-registration:32",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "SvcDashcfgDashlistLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-svc-cfg-list:32",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CrrDashlistLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-crr-list:32",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CrrDashpublishLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-crr-publish:32",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "SvcDashcfgDashgetLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-svc-cfg-get:32",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CrrDashreadLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-crr-read:32",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CrrDashofflineDashregistrationLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-crr-offline-registration:32",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CfgDashupdateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-cfg-update:32",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "AvlDashlistLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-avl-list:32",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "AvlDashdeleteLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-avl-delete:32",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "IndexingLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-indexing:31",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CfgDashdeleteLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-cfg-delete:32",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CrrDashreadDashmetaLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-crr-read-meta:32",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CfgDashuploadLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-cfg-upload:7",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "IntegrationDashavlDashupdateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-integration-avl-update:32",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CfgDashmarcoDashupdateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-cfg-marco-update:32",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CfgDashgetLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-carrier-service-abc-cfg-get:32",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://ot1d99x247.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/tracking-role-service-abc/8fc5fc90-e976-11e8-b83f-50fae957fc56",
+      "StackName": "tracking-role-service-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-11-16T08:06:46.326Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "CREATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [{ "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "test-sls-deployments-abc-ap-southeast-2" }],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/test-shipment-service-abc/653e97d0-e970-11e8-97c3-06a653fc8ec8",
+      "StackName": "test-shipment-service-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-11-16T07:22:38.007Z",
+      "LastUpdatedTime": "2019-03-05T02:52:18.321Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "MarcoLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-shipment-service-abc-marco:64",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "BatchDashprocessLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-shipment-service-abc-batch-process:64",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "UpdateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-shipment-service-abc-update:64",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "BatchDashlistLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-shipment-service-abc-batch-list:64",
+          "Description": "Current Lambda function version"
+        },
+        { "OutputKey": "PublicTopicArnShipments", "OutputValue": "arn:aws:sns:ap-southeast-2:159931620759:test-shipment-service-abc-shipments" },
+        {
+          "OutputKey": "ExperiencesLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-shipment-service-abc-experiences:64",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "IndexingLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-shipment-service-abc-indexing:64",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ListLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-shipment-service-abc-list:64",
+          "Description": "Current Lambda function version"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "test-sls-deployments-abc-ap-southeast-2" },
+        {
+          "OutputKey": "ReadLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-shipment-service-abc-read:64",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "BatchDashcreateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-shipment-service-abc-batch-create:64",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "DeleteLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-shipment-service-abc-delete:64",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CreateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-shipment-service-abc-create:64",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "BatchDashreadLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-shipment-service-abc-batch-read:64",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://syazexefc9.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/test-account-service-abc/9d748ac0-e956-11e8-b693-0a054720b6b2",
+      "StackName": "test-account-service-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-11-16T04:18:05.302Z",
+      "LastUpdatedTime": "2019-03-05T02:38:39.135Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "ActivateDashplanLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-activate-plan:16",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ListDashaccountsLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-list-accounts:16",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "GetDashaccountLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-get-account:16",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "AccountDashmarcoLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-account-marco:16",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ListDashusersLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-list-users:16",
+          "Description": "Current Lambda function version"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "test-account-service-serverlessdeploymentbuck-kmjk3akcwaoj" },
+        {
+          "OutputKey": "ListDashtokensLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-list-tokens:16",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "AccountCreatedTopicArn",
+          "OutputValue": "arn:aws:sns:ap-southeast-2:159931620759:test-account-service-abc-account-created",
+          "Description": "ARN of the topic for new accounts",
+          "ExportName": "test-account-service-abc-account-created"
+        },
+        {
+          "OutputKey": "UpdateDashaccountLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-update-account:16",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "GetDashemailDashavailabilityLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-get-email-availability:16",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "UpdateDashuserLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-update-user:16",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "DeleteDashtokenLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-delete-token:16",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "UpdateDashtokenLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-update-token:16",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "UpdateDashplanLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-update-plan:16",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "GetDashtokenLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-get-token:16",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "IndexDashaccountsLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-index-accounts:16",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "DeleteDashuserLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-delete-user:16",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CreateDashaccountLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-create-account:16",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "DeleteDashplanLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-delete-plan:16",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CreateDashplanLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-create-plan:16",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "SnsRecoveryTokenTopicArn",
+          "OutputValue": "arn:aws:sns:ap-southeast-2:159931620759:test-account-service-abc-recovery-tokens",
+          "Description": "ARN of the recovery tokens SNS topic"
+        },
+        {
+          "OutputKey": "GetDashuserLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-get-user:16",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "PersonaDashgetLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-persona-get:16",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CreateDashtokenLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-create-token:16",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CreateDashuserLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-create-user:16",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "DeleteDashaccountLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-delete-account:16",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CreateDashinvitationLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-create-invitation:16",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "GetDashplanLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-account-service-abc-get-plan:16",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://ic54mgyhfe.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/test-order-service-abc/73d0c4b0-e94f-11e8-b3d7-0a8fa6fe2426",
+      "StackName": "test-order-service-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-11-16T03:26:49.042Z",
+      "LastUpdatedTime": "2019-03-05T02:59:55.550Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "FulfillmentsDashcreateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-order-service-abc-fulfillments-create:97",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "MarcoLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-order-service-abc-marco:97",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "PatchLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-order-service-abc-patch:96",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "UpdateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-order-service-abc-update:97",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "FulfillmentsDashlistLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-order-service-abc-fulfillments-list:97",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ExperiencesLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-order-service-abc-experiences:97",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "IndexingLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-order-service-abc-indexing:97",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ListLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-order-service-abc-list:97",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "DestroyLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-order-service-abc-destroy:97",
+          "Description": "Current Lambda function version"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "test-sls-deployments-abc-ap-southeast-2" },
+        {
+          "OutputKey": "ReadLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-order-service-abc-read:97",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CreateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-order-service-abc-create:97",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "FulfillmentsDashreadLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-order-service-abc-fulfillments-read:97",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "FulfillmentsDashpatchLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-order-service-abc-fulfillments-patch:97",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://titlrqkuzh.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/awseb-e-umysvmxihi-stack/98be09b0-d1bf-11e8-bed1-0ae7a4cf9f8c",
+      "StackName": "awseb-e-umysvmxihi-stack",
+      "Description": "AWS Elastic Beanstalk environment (Name: 'tema-Appa-1BJ0XS7P2FOT2'  Id: 'e-umysvmxihi')",
+      "Parameters": [
+        { "ParameterKey": "InstanceTypeFamily", "ParameterValue": "****" },
+        { "ParameterKey": "LogPublicationControl", "ParameterValue": "****" },
+        { "ParameterKey": "InstancePort", "ParameterValue": "****" },
+        { "ParameterKey": "AWSEBEnvironmentId", "ParameterValue": "****" },
+        { "ParameterKey": "HooksPkgUrl", "ParameterValue": "****" },
+        { "ParameterKey": "AWSEBEnvironmentName", "ParameterValue": "****" },
+        { "ParameterKey": "AWSEBReferrerId", "ParameterValue": "****" },
+        { "ParameterKey": "AppSource", "ParameterValue": "****" },
+        { "ParameterKey": "ProxyServer", "ParameterValue": "****" },
+        { "ParameterKey": "EnvironmentVariables", "ParameterValue": "****" },
+        { "ParameterKey": "AWSEBAgentId", "ParameterValue": "****" },
+        { "ParameterKey": "InstanceType", "ParameterValue": "****" },
+        { "ParameterKey": "AWSEBEnvironmentBucket", "ParameterValue": "****" }
+      ],
+      "CreationTime": "2018-10-17T03:49:06.700Z",
+      "LastUpdatedTime": "2019-05-05T00:13:06.943Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": true,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "AWSEBLoadBalancerURL",
+          "OutputValue": "http://awseb-e-u-AWSEBLoa-FS3SLZ17B3P4-222055645.ap-southeast-2.elb.amazonaws.com",
+          "Description": "The ElasticBeanstalk ELB URL of the website"
+        }
+      ],
+      "Tags": [
+        { "Key": "elasticbeanstalk:environment-name", "Value": "tema-Appa-1BJ0XS7P2FOT2" },
+        { "Key": "elasticbeanstalk:environment-id", "Value": "e-umysvmxihi" },
+        { "Key": "Name", "Value": "tema-Appa-1BJ0XS7P2FOT2" }
+      ],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/schemas-service-abc/bb8b4c60-d1be-11e8-b5b8-02d92e19f85a",
+      "StackName": "schemas-service-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-10-17T03:42:55.533Z",
+      "LastUpdatedTime": "2018-10-17T03:43:28.325Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        { "OutputKey": "SchemaCloudFrontDistributionOutput", "OutputValue": "d1v2mwgnox9cp6.cloudfront.net" },
+        { "OutputKey": "ServiceEndpoint", "OutputValue": "https://d1v2mwgnox9cp6.cloudfront.net" },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "schemas-service-abc-serverlessdeploymentbucket-1lsjeq6tcuj8o" }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/providence-auth-abc/84b18ce0-d1be-11e8-acec-50fae957fce6",
+      "StackName": "providence-auth-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [{ "ParameterKey": "SamlProviderArn", "ParameterValue": "" }],
+      "CreationTime": "2018-10-17T03:41:23.510Z",
+      "LastUpdatedTime": "2018-10-17T03:41:56.505Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "RedirectLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:providence-auth-abc-redirect:1",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "RoleGodModeArn",
+          "OutputValue": "arn:aws:iam::159931620759:role/providence-auth-abc-RoleAuthedGodMode-MWCKHHT2G68R",
+          "Description": "ARN for admin employees."
+        },
+        {
+          "OutputKey": "IdentityPoolId",
+          "OutputValue": "ap-southeast-2:6e9f1f6e-65ef-4cff-8c79-5cf4af6195ef",
+          "Description": "Identity pool Id needed for the providence app, and GSuite role configuration"
+        },
+        {
+          "OutputKey": "RoleReadOnlyArn",
+          "OutputValue": "arn:aws:iam::159931620759:role/providence-auth-abc-RoleAuthedReadOnly-1BK5ODNT4LPCA",
+          "Description": "ARN for read only employees. Default for everyone"
+        },
+        {
+          "OutputKey": "PolicyServiceRegistryReadArn",
+          "OutputValue": "arn:aws:iam::159931620759:policy/providence-auth-abc-ServiceRegistryReadPolicy-3FBY62WS5G82",
+          "Description": "ARN for service registry reading policy",
+          "ExportName": "providence-auth-abc:PolicyServiceRegistryRead"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://qzs96fe4t0.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "providence-auth-abc-serverlessdeploymentbucket-1sivfa9m3eyqu" }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/credentials-abc-support/2644e1c0-d1be-11e8-b5b8-02d92e19f85a",
+      "StackName": "credentials-abc-support",
+      "Description": "Holds all the deployment users and policies that our abc services use to deploy themselves.",
+      "Parameters": [],
+      "CreationTime": "2018-10-17T03:38:45.095Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "CREATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "uSchemasServiceCredentials",
+          "OutputValue": "aws_access_key_id = AKIAJWM7SD37OV56BWXQ\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "uProvidenceAuthCredentials",
+          "OutputValue": "aws_access_key_id = AKIAJ3JJFYU3YCGTCKWQ\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "PolicyServiceRegistryReadArn",
+          "OutputValue": "arn:aws:iam::159931620759:policy/credentials-abc-support-deployServiceRegistryRead-1CIKDD4POHZQB",
+          "Description": "ARN for service registry reading policy",
+          "ExportName": "credentials-abc-support:PolicyServiceRegistryRead"
+        }
+      ],
+      "Tags": [],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/dpd-uk-abc/bb402f10-d1bd-11e8-9e82-028a77aa9a56",
+      "StackName": "dpd-uk-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-10-17T03:35:45.547Z",
+      "LastUpdatedTime": "2019-05-31T06:02:50.462Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "RegistrationLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:dpd-uk-abc-registration:12",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "TrackingLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:dpd-uk-abc-tracking:12",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "IamRoleArnLambda",
+          "OutputValue": "arn:aws:iam::159931620759:role/dpd-uk-abc-IamRoleLambda-LP59Y6PVUT3N",
+          "Description": "ARN of the lambda IAM role"
+        },
+        {
+          "OutputKey": "BookingLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:dpd-uk-abc-booking:12",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "QuoteLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:dpd-uk-abc-quote:12",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://xk22ubqvmd.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "test-sls-deployments-abc-ap-southeast-2" },
+        {
+          "OutputKey": "MetaLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:dpd-uk-abc-meta:12",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "DocumentationLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:dpd-uk-abc-documentation:12",
+          "Description": "Current Lambda function version"
+        }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/credentials-abc-carriers/c005c2e0-d1bc-11e8-a439-06b8df84f342",
+      "StackName": "credentials-abc-carriers",
+      "Description": "Holds all the deployment users and policies that our abc services use to deploy themselves.",
+      "Parameters": [],
+      "CreationTime": "2018-10-17T03:28:44.058Z",
+      "LastUpdatedTime": "2019-03-05T03:08:02.045Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "uUpsV3Credentials",
+          "OutputValue": "aws_access_key_id = AKIAJZZ6VTR4HKEM2IKA\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "utestDocumentServiceCredentials",
+          "OutputValue": "aws_access_key_id = AKIAIQ7IXPJOFGV2NDWQ\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "uDpdUkCredentials",
+          "OutputValue": "aws_access_key_id = AKIAIK5XEI43GEKBV6EA\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "uCarrierIntegrationStubCredentials",
+          "OutputValue": "aws_access_key_id = AKIAIHNLXZYGNANA74JQ\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "uGenericCarrierV1Credentials",
+          "OutputValue": "aws_access_key_id = AKIAJJTUFLNSKH4EIC7A\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "PolicyServiceRegistryReadArn",
+          "OutputValue": "arn:aws:iam::159931620759:policy/credentials-abc-carriers-deployServiceRegistryRead-1TVQUQKMMGBME",
+          "Description": "ARN for service registry reading policy",
+          "ExportName": "credentials-abc-carriers:PolicyServiceRegistryRead"
+        },
+        {
+          "OutputKey": "uFedexV1Credentials",
+          "OutputValue": "aws_access_key_id = AKIAIT77SD5NQK2W2GMQ\naws_secret_access_key = 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"
+        }
+      ],
+      "Tags": [],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/test-document-service-abc/8b7bf9c0-d1af-11e8-ba70-0acf6db4ada6",
+      "StackName": "test-document-service-abc",
+      "Description": "AWS CloudFormation for deploying Apparatus",
+      "Parameters": [],
+      "CreationTime": "2018-10-17T01:54:12.454Z",
+      "LastUpdatedTime": "2018-12-19T04:49:38.957Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        { "OutputKey": "ApparatusInstanceProfile", "OutputValue": "test-document-service-abc-ApparatusInstanceProfile-IHMD2AIGZJ6I" },
+        { "OutputKey": "DeploymentBucketName", "OutputValue": "test-document-service-abc-ap-southeast-2-bucket" },
+        { "OutputKey": "ApparatusEC2Role", "OutputValue": "test-document-service-abc-ApparatusEC2Role-RSJXTLQFN1VJ" }
+      ],
+      "Tags": [],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/test-tracking-service-abc/59c50ce0-d138-11e8-8c4e-50fae957fcba",
+      "StackName": "test-tracking-service-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-10-16T11:40:59.156Z",
+      "LastUpdatedTime": "2019-05-17T03:55:46.690Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "ProcessEventsLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-tracking-service-abc-processEvents:31",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ingestDeadletterQueueUrl",
+          "OutputValue": "https://sqs.ap-southeast-2.amazonaws.com/159931620759/test-tracking-service-abc-ingest-dead-letter",
+          "Description": "URL of the deadletter source queue"
+        },
+        {
+          "OutputKey": "DeleteShipmentLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-tracking-service-abc-deleteShipment:31",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "TrackShipmentLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-tracking-service-abc-trackShipment:31",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ingestQueueUrl",
+          "OutputValue": "https://sqs.ap-southeast-2.amazonaws.com/159931620759/test-tracking-service-abc-ingest",
+          "Description": "URL of the source queue"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "test-sls-deployments-abc-ap-southeast-2" },
+        {
+          "OutputKey": "shipmentIngestQueueUrl",
+          "OutputValue": "https://sqs.ap-southeast-2.amazonaws.com/159931620759/test-tracking-service-abc-shipments-ingest",
+          "Description": "URL of the source queue"
+        },
+        {
+          "OutputKey": "IamRoleArnLambda",
+          "OutputValue": "arn:aws:iam::159931620759:role/test-tracking-service-abc-IamRoleLambda-EGOYAEQ7357N",
+          "Description": "ARN of the lambda IAM role"
+        },
+        {
+          "OutputKey": "TrackingStoreBucket",
+          "OutputValue": "2018/10/16/[$LATEST]ed30764882ff44c08e7073a23c3b5c4b",
+          "Description": "Name of the S3 bucket used for Tracking Store"
+        },
+        {
+          "OutputKey": "PutEventLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-tracking-service-abc-putEvent:31",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "snsTrackingEventsTopicArn",
+          "OutputValue": "arn:aws:sns:ap-southeast-2:159931620759:test-tracking-service-abc-tracking-events",
+          "Description": "ARN of the SNS Metrics topic"
+        },
+        {
+          "OutputKey": "ProcessShipmentsLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-tracking-service-abc-processShipments:31",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "shipmentIngestDeadletterQueueUrl",
+          "OutputValue": "https://sqs.ap-southeast-2.amazonaws.com/159931620759/test-tracking-service-abc-shipments-ingest-dead-letter",
+          "Description": "URL of the deadletter source queue"
+        },
+        {
+          "OutputKey": "GetEventsLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-tracking-service-abc-getEvents:31",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://efydryma0j.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/test-product-service-abc/dc914230-d131-11e8-85aa-50fae94fac4a",
+      "StackName": "test-product-service-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-10-16T10:54:32.014Z",
+      "LastUpdatedTime": "2019-03-05T02:57:11.411Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "MarcoLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-product-service-abc-marco:7",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "DeleteLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-product-service-abc-delete:7",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CreateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-product-service-abc-create:7",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "UpdateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-product-service-abc-update:7",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ListLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-product-service-abc-list:7",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://xva3wfuaik.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "test-sls-deployments-abc-ap-southeast-2" },
+        {
+          "OutputKey": "ReadLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-product-service-abc-read:7",
+          "Description": "Current Lambda function version"
+        }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/test-rate-service-abc/9a63baf0-d131-11e8-9d78-06f9bb077594",
+      "StackName": "test-rate-service-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-10-16T10:52:40.980Z",
+      "LastUpdatedTime": "2019-03-05T02:55:58.875Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "ListRateTemplateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-rate-service-abc-listRateTemplate:8",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "DeleteLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-rate-service-abc-delete:8",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CreateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-rate-service-abc-create:8",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "UpdateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-rate-service-abc-update:8",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "GetTemplateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-rate-service-abc-getTemplate:8",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ListLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-rate-service-abc-list:8",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://eewjakxmq2.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "test-sls-deployments-abc-ap-southeast-2" },
+        {
+          "OutputKey": "ReadLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-rate-service-abc-read:8",
+          "Description": "Current Lambda function version"
+        }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/rate-templates-abc/fe9c3130-d12e-11e8-846c-0a9d57b05c48",
+      "StackName": "rate-templates-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-10-16T10:34:00.612Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "CREATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://d1ahy1y3uowr8t.cloudfront.net",
+          "Description": "The url of the rates template react app wepack bundle"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "test-sls-deployments-abc-ap-southeast-2" }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/test-session-service-abc/c9b9fbf0-d12e-11e8-b5b8-02d92e19f85a",
+      "StackName": "test-session-service-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-10-16T10:32:31.802Z",
+      "LastUpdatedTime": "2019-03-05T02:54:12.331Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "OauthLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-session-service-abc-oauth:15",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CreateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-session-service-abc-create:15",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://25lto963ub.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "test-session-service-serverlessdeploymentbuck-1ki7u1vw3o3y" }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/test-documentation-storage-abc/2c2dcce0-d12e-11e8-998d-02a0fcb8b118",
+      "StackName": "test-documentation-storage-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-10-16T10:28:08.308Z",
+      "LastUpdatedTime": "2018-12-19T04:17:17.229Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "AggregateDashdocLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-documentation-storage-abc-aggregate-doc:58",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "GetDashmultiDashdocsLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-documentation-storage-abc-get-multi-docs:58",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "DeleteDashsingleDashdocLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-documentation-storage-abc-delete-single-doc:58",
+          "Description": "Current Lambda function version"
+        },
+        { "OutputKey": "StorageS3RegionalBucket", "OutputValue": "test-documentation-storage-abc-ap-southeast-2" },
+        {
+          "OutputKey": "CreateDashmultiDashdocsLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-documentation-storage-abc-create-multi-docs:58",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://f0eubnysr0.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "test-sls-deployments-abc-ap-southeast-2" },
+        {
+          "OutputKey": "CreateDashsingleDashdocLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-documentation-storage-abc-create-single-doc:58",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "GetDashsingleDashdocLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-documentation-storage-abc-get-single-doc:58",
+          "Description": "Current Lambda function version"
+        }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/test-container-service-abc/f2f33a00-d12d-11e8-aa0b-027753bcaabc",
+      "StackName": "test-container-service-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-10-16T10:26:31.671Z",
+      "LastUpdatedTime": "2019-03-05T02:51:31.740Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "MarcoLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-container-service-abc-marco:9",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "DeleteLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-container-service-abc-delete:9",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CreateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-container-service-abc-create:9",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "UpdateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-container-service-abc-update:9",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ListLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-container-service-abc-list:9",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://ibbb07lrz5.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "test-sls-deployments-abc-ap-southeast-2" },
+        {
+          "OutputKey": "ReadLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-container-service-abc-read:9",
+          "Description": "Current Lambda function version"
+        }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/packing-service-abc/9f4b0ef0-d12d-11e8-a8cb-0a7238563924",
+      "StackName": "packing-service-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-10-16T10:24:11.111Z",
+      "LastUpdatedTime": "2019-03-05T02:50:58.723Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "PackLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:packing-service-abc-pack:9",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://fo8h9sqwcj.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "test-sls-deployments-abc-ap-southeast-2" }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/test-stream-service-abc/dad37bb0-d128-11e8-8bf5-50fae94fac82",
+      "StackName": "test-stream-service-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-10-16T09:50:03.510Z",
+      "LastUpdatedTime": "2019-03-05T02:53:20.217Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "CreateDashstreamLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-stream-service-abc-create-stream:11",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ListDashstreamDasheventsLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-stream-service-abc-list-stream-events:11",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "DeleteDashstreamDasheventLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-stream-service-abc-delete-stream-event:11",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "DeleteDashstreamLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-stream-service-abc-delete-stream:11",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://1d1644ufj3.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "test-stream-service-t-serverlessdeploymentbuck-1jwbedisqj69t" }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/magento-shipping-service-abc/901e6c10-d128-11e8-a1cb-50fae957fc56",
+      "StackName": "magento-shipping-service-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-10-16T09:47:58.172Z",
+      "LastUpdatedTime": "2019-03-05T02:49:06.569Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "EventDashexecuteLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:magento-shipping-service-abc-event-execute:10",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "EventDashstatusLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:magento-shipping-service-abc-event-status:10",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "SubscriptionDashcreatedLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:magento-shipping-service-abc-subscription-created:10",
+          "Description": "Current Lambda function version"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "magento-shipping-service-serverlessdeploymentbuck-1fte8ja73ruq0" },
+        {
+          "OutputKey": "InvoiceDashcreatedLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:magento-shipping-service-abc-invoice-created:10",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "SubmitInvoicesLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:magento-shipping-service-abc-submitInvoices:10",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "InvoiceDashcanceledLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:magento-shipping-service-abc-invoice-canceled:10",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CustomerDashvettingLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:magento-shipping-service-abc-customer-vetting:10",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "PaymentDashreceivedLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:magento-shipping-service-abc-payment-received:10",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CustomerDashonboardedLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:magento-shipping-service-abc-customer-onboarded:10",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "SubscriptionDashcanceledLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:magento-shipping-service-abc-subscription-canceled:10",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "MagentoActionStepabcArn",
+          "OutputValue": "arn:aws:states:ap-southeast-2:159931620759:stateMachine:MagentoActionStepabc",
+          "Description": "Current StateMachine Arn"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://dxtb76ofei.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/test-notification-service-abc/92aab1b0-d127-11e8-9055-023d905b39de",
+      "StackName": "test-notification-service-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-10-16T09:40:53.160Z",
+      "LastUpdatedTime": "2018-12-19T04:10:32.420Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "StrategyLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-notification-service-abc-strategy:3",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "DispatchLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-notification-service-abc-dispatch:3",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "NotifyLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-notification-service-abc-notify:3",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://6dczh8n7j4.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "test-sls-deployments-abc-ap-southeast-2" }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/collection-point-service-abc/3bbad5b0-d127-11e8-9055-023d905b39de",
+      "StackName": "collection-point-service-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-10-16T09:38:27.091Z",
+      "LastUpdatedTime": "2018-10-16T09:39:00.521Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "FetchDashintegrationLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:collection-point-service-abc-fetch-integration:1",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "FetchDashrunnerLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:collection-point-service-abc-fetch-runner:1",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "LoadDashwebhookLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:collection-point-service-abc-load-webhook:1",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "FetchDashvalidateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:collection-point-service-abc-fetch-validate:1",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "FetchDashschedulesLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:collection-point-service-abc-fetch-schedules:1",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CollectionPointLoadArn",
+          "OutputValue": "arn:aws:states:ap-southeast-2:159931620759:stateMachine:CollectionPointLoad-3hqsVF7RVzl9",
+          "Description": "Current StateMachine Arn"
+        },
+        {
+          "OutputKey": "LoadDashstatusLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:collection-point-service-abc-load-status:1",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "LoadDashcleanupLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:collection-point-service-abc-load-cleanup:1",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CollectionPointFetchArn",
+          "OutputValue": "arn:aws:states:ap-southeast-2:159931620759:stateMachine:CollectionPointFetch-hJZDAVuzEB3b",
+          "Description": "Current StateMachine Arn"
+        },
+        {
+          "OutputKey": "CollectionPointCleanUpArn",
+          "OutputValue": "arn:aws:states:ap-southeast-2:159931620759:stateMachine:CollectionPointCleanUp-htZq5Z2P0Ks7",
+          "Description": "Current StateMachine Arn"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "collection-point-service-serverlessdeploymentbuck-jdu7llhd88nm" },
+        {
+          "OutputKey": "LoadDashvalidateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:collection-point-service-abc-load-validate:1",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CleanupDashdeleteLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:collection-point-service-abc-cleanup-delete:1",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CleanupDashcheckLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:collection-point-service-abc-cleanup-check:1",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "LoadDashsaveLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:collection-point-service-abc-load-save:1",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://etdyw318m9.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/test-location-service-abc/004c4140-d126-11e8-9e0f-0a584ea5caca",
+      "StackName": "test-location-service-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-10-16T09:29:37.885Z",
+      "LastUpdatedTime": "2019-03-05T02:43:59.714Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "GetDefaultLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-location-service-abc-getDefault:17",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "MarcoLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-location-service-abc-marco:17",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "DeleteLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-location-service-abc-delete:17",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "CreateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-location-service-abc-create:17",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "UpdateLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-location-service-abc-update:17",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "HeadLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-location-service-abc-head:17",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ListLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-location-service-abc-list:17",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://1wv3etnntc.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "test-sls-deployments-abc-ap-southeast-2" },
+        {
+          "OutputKey": "ReadLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-location-service-abc-read:17",
+          "Description": "Current Lambda function version"
+        }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/test-billing-service-abc/4e2ae7f0-d125-11e8-998d-02a0fcb8b118",
+      "StackName": "test-billing-service-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-10-16T09:24:39.030Z",
+      "LastUpdatedTime": "2019-03-05T02:39:45.510Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "SpawnInvoicesStepabcArn",
+          "OutputValue": "arn:aws:states:ap-southeast-2:159931620759:stateMachine:SpawnInvoicesStepabc",
+          "Description": "Current StateMachine Arn"
+        },
+        {
+          "OutputKey": "CreatePlanLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-billing-service-abc-createPlan:15",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "SpawnInvoicesLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-billing-service-abc-spawnInvoices:15",
+          "Description": "Current Lambda function version"
+        },
+        { "OutputKey": "BillingInvoiceQueueURL", "OutputValue": "https://sqs.ap-southeast-2.amazonaws.com/159931620759/billing-invoice-queue-abc" },
+        {
+          "OutputKey": "GetUsagesByMonthLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-billing-service-abc-getUsagesByMonth:15",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "GenerateMonthlyLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-billing-service-abc-generateMonthly:15",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ReadPlanLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-billing-service-abc-readPlan:15",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "PatchInvoiceLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-billing-service-abc-patchInvoice:15",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ListInvoicesLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-billing-service-abc-listInvoices:15",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "GenerateAnnualLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-billing-service-abc-generateAnnual:1",
+          "Description": "Current Lambda function version"
+        },
+        { "OutputKey": "BillingPlanCreatedStreamOutput", "OutputValue": "billing-plan-created-abc" },
+        {
+          "OutputKey": "CreateInvoiceLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-billing-service-abc-createInvoice:15",
+          "Description": "Current Lambda function version"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "test-billing-service-serverlessdeploymentbuck-1i5oguho0rvt5" },
+        {
+          "OutputKey": "GetTotalUsagesLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-billing-service-abc-getTotalUsages:15",
+          "Description": "Current Lambda function version"
+        },
+        { "OutputKey": "BillingUsageStreamOutput", "OutputValue": "billing-usage-abc" },
+        {
+          "OutputKey": "ListMonthlyUsagesLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-billing-service-abc-listMonthlyUsages:15",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ReadInvoiceLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-billing-service-abc-readInvoice:15",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "UpdatePlanLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-billing-service-abc-updatePlan:15",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "DeletePlanLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-billing-service-abc-deletePlan:15",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ConsumeUsageLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-billing-service-abc-consumeUsage:15",
+          "Description": "Current Lambda function version"
+        },
+        { "OutputKey": "BillingInvoiceGeneratedStreamOutput", "OutputValue": "billing-invoices-generated-abc" },
+        {
+          "OutputKey": "GenerateProRataLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-billing-service-abc-generateProRata:15",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "DeleteInvoiceLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-billing-service-abc-deleteInvoice:15",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://1esgpfi122.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/test-sequencer-abc/f13a5580-d124-11e8-aa0b-027753bcaabc",
+      "StackName": "test-sequencer-abc",
+      "Description": "The AWS CloudFormation template for this Serverless application",
+      "Parameters": [],
+      "CreationTime": "2018-10-16T09:22:03.230Z",
+      "LastUpdatedTime": "2018-12-19T01:29:03.918Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM", "CAPABILITY_NAMED_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "IamRoleArnLambda",
+          "OutputValue": "arn:aws:iam::159931620759:role/test-sequencer-abc-IamRoleLambda-131WO5JBW4XUV",
+          "Description": "ARN of the lambda IAM role"
+        },
+        {
+          "OutputKey": "dynamoTableName",
+          "OutputValue": "test-sequencer.abc.sequences",
+          "Description": "The name of the Dynamo table that store sequences"
+        },
+        {
+          "OutputKey": "SequencerLambdaFunctionQualifiedArn",
+          "OutputValue": "arn:aws:lambda:ap-southeast-2:159931620759:function:test-sequencer-abc-sequencer:9",
+          "Description": "Current Lambda function version"
+        },
+        {
+          "OutputKey": "ServiceEndpoint",
+          "OutputValue": "https://24jahxz2xc.execute-api.ap-southeast-2.amazonaws.com/abc",
+          "Description": "URL of the service endpoint"
+        },
+        { "OutputKey": "ServerlessDeploymentBucketName", "OutputValue": "test-sls-deployments-abc-ap-southeast-2" }
+      ],
+      "Tags": [{ "Key": "STAGE", "Value": "abc" }],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    },
+    {
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:159931620759:stack/credentials-abc-phoenix/0d117ab0-d123-11e8-b9db-50fae94fac1e",
+      "StackName": "credentials-abc-phoenix",
+      "Description": "Holds all the deployment users and policies that our abc services use to deploy themselves.",
+      "Parameters": [],
+      "CreationTime": "2018-10-16T09:08:30.857Z",
+      "LastUpdatedTime": "2019-03-05T00:41:21.468Z",
+      "RollbackConfiguration": {},
+      "StackStatus": "UPDATE_COMPLETE",
+      "DisableRollback": false,
+      "NotificationARNs": [],
+      "Capabilities": ["CAPABILITY_IAM"],
+      "Outputs": [
+        {
+          "OutputKey": "utestNotificationServiceCredentials",
+          "OutputValue": "aws_access_key_id = AKIAJKFTWZGNPV34LZ6A\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "uCollectionPointServiceCredentials",
+          "OutputValue": "aws_access_key_id = AKIAIEIGZPQCEPB3GERQ\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "utestLocationServiceCredentials",
+          "OutputValue": "aws_access_key_id = AKIAIAMJUDDOEAYQKLHA\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "utestTrackingServiceCredentials",
+          "OutputValue": "aws_access_key_id = AKIAJ6PSQXDN3ZUYS67Q\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "utestCompletionServiceCredentials",
+          "OutputValue": "aws_access_key_id = AKIAJOVPVH5RC4C74BSA\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "uMagentoShippingServiceCredentials",
+          "OutputValue": "aws_access_key_id = AKIAJEB57KFSKD63ONVQ\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "uRateTemplatesCredentials",
+          "OutputValue": "aws_access_key_id = AKIAJWSEGWFNGXSEMVHA\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "utestDocumentationStorageCredentials",
+          "OutputValue": "aws_access_key_id = AKIAIMNF7D4MZVDDPHMQ\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "utestAccountServiceCredentials",
+          "OutputValue": "aws_access_key_id = AKIAJQFNCYU7CDBHH2SQ\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "utestContainerServiceCredentials",
+          "OutputValue": "aws_access_key_id = AKIAI6UFASYDPWL3KQUQ\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "PolicyServiceRegistryReadArn",
+          "OutputValue": "arn:aws:iam::159931620759:policy/credentials-abc-phoenix-deployServiceRegistryRead-1UKISNIN7R0F0",
+          "Description": "ARN for service registry reading policy",
+          "ExportName": "credentials-abc-phoenix:PolicyServiceRegistryRead"
+        },
+        {
+          "OutputKey": "utestBillingServiceCredentials",
+          "OutputValue": "aws_access_key_id = AKIAIE4Z2CHNEQNWQXXQ\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "utestExperienceServiceCredentials",
+          "OutputValue": "aws_access_key_id = AKIAIQZYEG7SCZWVOPAQ\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "utestProductServiceCredentials",
+          "OutputValue": "aws_access_key_id = AKIAJIVFGVXBJ722B76Q\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "utestStreamServiceCredentials",
+          "OutputValue": "aws_access_key_id = AKIAIEHCIPH7AA33WG5A\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "utestSessionServiceCredentials",
+          "OutputValue": "aws_access_key_id = AKIAIJGC5OVTOD2AW5IA\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "uPackingServiceCredentials",
+          "OutputValue": "aws_access_key_id = AKIAJU724PNWWZYQKBKA\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "utestRateServiceCredentials",
+          "OutputValue": "aws_access_key_id = AKIAI6ALFO42WQFTOIHA\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "utestOrderServiceCredentials",
+          "OutputValue": "aws_access_key_id = AKIAJTDO7GFQFWVGLEYA\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "utestShipmentServiceCredentials",
+          "OutputValue": "aws_access_key_id = AKIAIESUSGA43WHGEW7Q\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "utestNginxProxyCredentials",
+          "OutputValue": "aws_access_key_id = AKIAJHJ7XC4P5XVQXIUQ\naws_secret_access_key = 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"
+        },
+        {
+          "OutputKey": "utestCarrierServiceCredentials",
+          "OutputValue": "aws_access_key_id = AKIAJOPLNM25JGTHNEMQ\naws_secret_access_key = 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"
+        }
+      ],
+      "Tags": [],
+      "DriftInformation": { "StackDriftStatus": "NOT_CHECKED" }
+    }
+  ]
+}

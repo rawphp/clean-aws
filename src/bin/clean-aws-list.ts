@@ -21,8 +21,14 @@ if (program.profile) {
   const creds = new AWS.SharedIniFileCredentials({ profile: program.profile });
 
   AWS.config.credentials = creds;
-} else {
+} else if (process.env.AWS_PROFILE) {
   program.profile = process.env.AWS_PROFILE;
+
+  const creds = new AWS.SharedIniFileCredentials({ profile: program.profile });
+
+  AWS.config.credentials = creds;
+} else {
+  throw new Error('No aws profile provided');
 }
 
 if (!program.profile) {
@@ -32,26 +38,18 @@ if (!program.profile) {
 // tslint:disable:no-floating-promises
 (async () => {
   try {
-    const statusCode = await list({
+    await list({
       profile: program.profile,
       region: program.region || regions,
       dryRun: false,
       resourceFile: program.resourceFile || `${process.cwd()}/${program.profile}-resources.json`,
     });
 
-    if (statusCode === 0) {
-      console.log(colors.green('\nListing operation completed successfully\n'));
-    } else {
-      console.error(colors.red(`\nResource listing failed with exit code "${statusCode}"\n`));
-    }
+    console.log(colors.green('\nListing operation completed successfully\n'));
 
-    process.exitCode = statusCode;
-
-    return 0;
+    process.exitCode = 0;
   } catch (error) {
     console.error(colors.red(error.message));
     process.exitCode = 1;
-
-    return 1;
   }
 })();
